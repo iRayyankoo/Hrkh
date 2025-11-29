@@ -1,122 +1,1261 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تهنئة عيد الفطر</title>
-    <style>
-        body { text-align: center; font-family: Arial, sans-serif; direction: rtl; background-color: #f8f9fa; }
-        header { margin: 20px 0; }
-        img.logo { max-width: 150px; }
-        canvas { border: 1px solid #ccc; margin-top: 10px; max-width: 80%; height: auto; }
-        input, button, select { margin: 10px; padding: 10px; font-size: 16px; }
-    </style>
-    <script>
-        function changeLanguage(lang) {
-            document.documentElement.lang = lang;
-            if (lang === "en") {
-                document.body.style.direction = "ltr";
-                document.getElementById("title").innerText = "🎉 Eid Mubarak 🎉";
-                document.getElementById("message").innerText = "To T&S family, we present these cards to spread joy and affection among your loved ones. Eid Mubarak, and may you be well every year.";
-                document.getElementById("nameLabel").placeholder = "Enter your name here";
-                document.getElementById("addNameBtn").innerText = "Add Name";
-                document.getElementById("designLabel").innerText = "Choose Design:";
-                document.getElementById("downloadBtn").innerText = "Download Greeting";
-            } else {
-                document.body.style.direction = "rtl";
-                document.getElementById("title").innerText = "🎉 عيدكم مبارك 🎉";
-                document.getElementById("message").innerText = "إلى عائلة T&S الأعزاء، نهديكم هذه البطاقات لتكونوا سببًا في نشر البهجة والمودة بين من تحبون. عيدكم مبارك، وكل عام وأنتم بخير.";
-                document.getElementById("nameLabel").placeholder = "أدخل اسمك هنا";
-                document.getElementById("addNameBtn").innerText = "إضافة الاسم";
-                document.getElementById("designLabel").innerText = "اختر التصميم:";
-                document.getElementById("downloadBtn").innerText = "تحميل التهنئة";
-            }
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>حركة – hrkh | صيانة سيارات وتغيير زيت</title>
+
+  <!-- خط Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================
+       إعدادات عامة و هوية حركة
+       ========================= */
+    :root {
+      /* ألوان من الهوية */
+      --color-primary: #6c50a0;      /* بنفسجي حركة الرئيسي */
+      --color-primary-dark: #5054a0; /* بنفسجي ثانوي أغمق */
+      --color-accent: #50a098;       /* تركوازي ثانوي */
+      --color-bg: #000000;
+      --color-section: #111111;
+      --color-card: #181818;
+      --color-text-main: #f9f9f9;
+      --color-text-muted: #c7c7c7;
+      --color-border: #333333;
+      --color-soft-gray: #dddddd;
+
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
+
+      --font-family: "Cairo", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background: radial-gradient(circle at top, #181818 0, #050505 45%, #000000 100%);
+      color: var(--color-text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* =========================
+       الهيدر / شريط التنقل
+       ========================= */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(20px);
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.96),
+        rgba(0, 0, 0, 0.88),
+        transparent
+      );
+      border-bottom: 1px solid rgba(199, 199, 199, 0.25);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #6c50a0, #50a098 50%, #000000);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #f9f9f9;
+      text-transform: lowercase;
+    }
+
+    .nav-title {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-title-main {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .nav-title-sub {
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 2px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to left, var(--color-accent), var(--color-primary));
+      border-radius: 999px;
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #f9f9f9;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.85rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      color: #f9f9f9;
+      box-shadow: 0 10px 25px rgba(108, 80, 160, 0.6);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(108, 80, 160, 0.85);
+    }
+
+    .btn-outline {
+      background: rgba(0, 0, 0, 0.7);
+      border-color: rgba(215, 215, 215, 0.4);
+      color: var(--color-text-muted);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--color-accent);
+      color: #f9f9f9;
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(215, 215, 215, 0.4);
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      color: #f9f9f9;
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       قسم الهيرو
+       ========================= */
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(80, 160, 152, 0.9);
+      color: #e0f4f1;
+      background: radial-gradient(circle at top left, #50a098, transparent 60%);
+    }
+
+    .hero-pill {
+      font-size: 0.75rem;
+      padding: 0.23rem 0.7rem;
+      border-radius: 999px;
+      border: 1px dashed rgba(199, 199, 199, 0.7);
+      color: var(--color-text-muted);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3.2vw, 2.7rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #6c50a0, #5054a0, #50a098);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      white-space: nowrap;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--color-text-muted);
+      max-width: 32rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--color-soft-gray);
+    }
+
+    .hero-note strong {
+      color: #f9f9f9;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      max-width: 25rem;
+    }
+
+    .stat-card {
+      background: radial-gradient(circle at top, #202020, #050505);
+      border-radius: 16px;
+      border: 1px solid rgba(80, 80, 80, 0.9);
+      padding: 0.8rem 0.9rem;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-value {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .stat-hint {
+      font-size: 0.7rem;
+      color: #9b9b9b;
+    }
+
+    /* جانب الهيرو */
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-panel {
+      background: radial-gradient(circle at top right, #181818, #050505 60%);
+      border-radius: var(--radius-xl);
+      padding: 1.3rem;
+      border: 1px solid rgba(80, 84, 160, 0.45);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.1rem;
+      font-size: 0.78rem;
+      color: #f9f9f9;
+    }
+
+    .hero-dots {
+      display: flex;
+      gap: 0.35rem;
+      align-items: center;
+    }
+
+    .hero-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(249, 249, 249, 0.7);
+    }
+
+    .hero-dot:nth-child(1) { opacity: 0.4; }
+    .hero-dot:nth-child(2) { opacity: 0.7; }
+    .hero-dot:nth-child(3) { opacity: 1; }
+
+    .hero-panel-title {
+      font-size: 0.78rem;
+      color: #f9f9f9;
+    }
+
+    .hero-panel-tag {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(108, 80, 160, 0.8);
+      background: rgba(0, 0, 0, 0.75);
+      color: #e5ddff;
+    }
+
+    .hero-panel-body {
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 18px;
+      padding: 1rem;
+      border: 1px solid rgba(60, 60, 60, 0.9);
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 0.9rem;
+    }
+
+    .hero-panel-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .hero-pill-item {
+      padding: 0.6rem 0.7rem;
+      border-radius: 999px;
+      background: radial-gradient(circle at right, #5054a0, #050505 70%);
+      font-size: 0.78rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #f9f9f9;
+    }
+
+    .hero-pill-item span {
+      font-size: 0.7rem;
+      color: #c7c7c7;
+    }
+
+    .hero-card-mini {
+      background: radial-gradient(circle at top left, #50a098, #050505 60%);
+      border-radius: 16px;
+      padding: 0.7rem 0.8rem;
+      font-size: 0.78rem;
+      color: #04100f;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .hero-card-mini strong {
+      font-size: 0.85rem;
+    }
+
+    .hero-ribbon {
+      position: absolute;
+      bottom: -12px;
+      left: 4%;
+      right: 4%;
+      background: linear-gradient(
+        135deg,
+        rgba(108, 80, 160, 0.95),
+        rgba(80, 160, 152, 0.95)
+      );
+      border-radius: 999px;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #f9f9f9;
+      font-weight: 600;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    /* =========================
+       الأقسام العامة
+       ========================= */
+    section {
+      padding: 2.5rem 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .section-title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      color: #c7c7c7;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .section-desc {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      max-width: 26rem;
+    }
+
+    .section-link {
+      font-size: 0.8rem;
+      color: var(--color-accent);
+      border-bottom: 1px dashed rgba(80, 160, 152, 0.7);
+      padding-bottom: 2px;
+      align-self: flex-start;
+      cursor: pointer;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #111111, #050505 55%, #111111);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      padding: 1.1rem 1rem;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-badge {
+      font-size: 0.72rem;
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(108, 80, 160, 0.8);
+      color: #e5ddff;
+      align-self: flex-start;
+    }
+
+    .card-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .card-text {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      margin-top: 0.3rem;
+      color: #b0b0b0;
+    }
+
+    .card-meta span strong {
+      color: #f9f9f9;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.7rem;
+      font-size: 0.78rem;
+      color: var(--color-accent);
+    }
+
+    .card-footer button {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(80, 160, 152, 0.8);
+      background: rgba(0, 0, 0, 0.9);
+      padding: 0.25rem 0.7rem;
+      color: #e0f4f1;
+      cursor: pointer;
+    }
+
+    /* =========================
+       لماذا حركة؟
+       ========================= */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    .feature {
+      background: radial-gradient(circle at top, #161616, #050505);
+      border-radius: var(--radius-lg);
+      border: 1px solid #262626;
+      padding: 1.1rem 1rem;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .feature-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: radial-gradient(circle at top, #6c50a0, #50a098);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      color: #f9f9f9;
+    }
+
+    .feature-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #f9f9f9;
+    }
+
+    /* =========================
+       دعوة للحجز
+       ========================= */
+    .cta-section {
+      padding: 2.5rem 0;
+    }
+
+    .cta-box {
+      background: radial-gradient(circle at top left, #6c50a0, #000000 60%);
+      border-radius: 24px;
+      padding: 1.8rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      align-items: center;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(108, 80, 160, 0.7);
+    }
+
+    .cta-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .cta-text {
+      font-size: 0.85rem;
+      color: var(--color-soft-gray);
+      max-width: 26rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    /* =========================
+       نموذج الحجز
+       ========================= */
+    .form-section {
+      padding: 0 0 3rem;
+    }
+
+    .form-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 1.8rem;
+    }
+
+    .form-card {
+      background: var(--color-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      padding: 1.4rem 1.3rem;
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7);
+    }
+
+    .form-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .form-card p {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.78rem;
+    }
+
+    .form-group label {
+      color: #f9f9f9;
+    }
+
+    .form-group small {
+      color: var(--color-text-muted);
+      font-size: 0.7rem;
+    }
+
+    .form-control,
+    textarea {
+      background: #050505;
+      border-radius: 999px;
+      border: 1px solid #333333;
+      padding: 0.6rem 0.9rem;
+      color: #f9f9f9;
+      font-size: 0.8rem;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    textarea {
+      border-radius: 18px;
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .form-control:focus,
+    textarea:focus {
+      border-color: #6c50a0;
+      box-shadow: 0 0 0 1px rgba(108, 80, 160, 0.45);
+    }
+
+    .form-footer-note {
+      font-size: 0.75rem;
+      color: #c7c7c7;
+      margin-top: 0.5rem;
+    }
+
+    .form-side {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .form-side-highlight {
+      padding: 0.7rem 0.8rem;
+      border-radius: 18px;
+      border: 1px dashed rgba(199, 199, 199, 0.7);
+      background: rgba(0, 0, 0, 0.7);
+      font-size: 0.8rem;
+      color: #f9f9f9;
+    }
+
+    .form-side-list {
+      list-style: none;
+      padding-right: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-side-list li::before {
+      content: "•";
+      margin-left: 0.3rem;
+      color: #6c50a0;
+    }
+
+    /* =========================
+       الفوتر
+       ========================= */
+    footer {
+      border-top: 1px solid #262626;
+      padding: 1.5rem 0 2rem;
+      background: #000000;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: #a3a3a3;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-links a {
+      color: #c7c7c7;
+      font-size: 0.78rem;
+    }
+
+    /* =========================
+       استجابة الشاشات
+       ========================= */
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-panel {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .form-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 780px) {
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .hero {
+        padding-top: 2.3rem;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .cards-grid,
+      .features-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-title {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <img class="logo" src="https://i.postimg.cc/vTxR7sPK/image.png" alt="شعار الشركة">
-        <select style="font-size: 12px; padding: 5px; position: absolute; left: 10px; top: 10px;" onchange="changeLanguage(this.value)">
-            <option value="ar">العربية</option>
-            <option value="en">English</option>
-        </select>
-    </header>
-    <h2 id="title">🎉 عيدكم مبارك 🎉</h2>
-    <p id="message">إلى عائلة T&S الأعزاء، نهديكم هذه البطاقات لتكونوا سببًا في نشر البهجة والمودة بين من تحبون. عيدكم مبارك، وكل عام وأنتم بخير.</p>
-    <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-        <input type="text" id="nameLabel" placeholder="أدخل اسمك هنا">
-        <button id="addNameBtn" onclick="drawText()">إضافة الاسم</button>
+  <!-- ========== الهيدر ========== -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-left">
+          <!-- تقدر تستبدل هذا الديف بصورة شعار حركة -->
+          <div class="nav-logo">hr</div>
+          <div class="nav-title">
+            <div class="nav-title-main">حركة – hrkh</div>
+            <div class="nav-title-sub">مركز صيانة سيارات وخدمات تغيير الزيت</div>
+          </div>
+        </div>
+
+        <div class="nav-links">
+          <a href="#hero">الرئيسية</a>
+          <a href="#services">الخدمات</a>
+          <a href="#why-us">لماذا حركة؟</a>
+          <a href="#booking">حجز موعد</a>
+          <a href="#location">الموقع</a>
+        </div>
+
+        <div class="nav-cta">
+          <a class="btn btn-outline" href="tel:05XXXXXXXX">اتصل بنا</a>
+          <a class="btn btn-primary" href="https://wa.me/WA_NUMBER_HERE" target="_blank">
+            حجز عبر واتساب
+          </a>
+        </div>
+
+        <button class="nav-toggle">القائمة</button>
+      </nav>
     </div>
-    <label id="designLabel" for="design">اختر التصميم:</label>
-    <select id="design" onchange="changeImage()">
-        <option value="design1">تصميم 1</option>
-        <option value="design2">تصميم 2</option>
-    </select>
-    <br>
-    <canvas id="canvas"></canvas>
-    <br>
-    <button id="downloadBtn" onclick="downloadImage()">تحميل التهنئة</button>
-    <script>
-        const images = {
-            "design1": "https://i.postimg.cc/FKKhf2QM/Happy-Eid-V3-1.png",
-            "design2": "https://i.postimg.cc/mgLsq0hP/Untitled-design-3.png"
-        };
+  </header>
 
-        let img = new Image();
-        img.crossOrigin = "anonymous";
-        img.src = images["design1"];
-        img.onload = function() { drawImage(); };
-        img.onerror = function() { alert('حدث خطأ في تحميل الصورة، تأكد من صحة الرابط.'); };
+  <!-- ========== الهيرو ========== -->
+  <main>
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-badge-row">
+              <span class="hero-badge">خدمة سريعة وانت في السيارة</span>
+              <span class="hero-pill">تغيير زيت – فلاتر – فحص سريع</span>
+            </div>
 
-        function drawImage() {
-            const canvas = document.getElementById("canvas");
-            const ctx = canvas.getContext("2d");
-            const scaleFactor = 0.5;
-            canvas.width = img.width * scaleFactor;
-            canvas.height = img.height * scaleFactor;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        }
+            <h1 class="hero-title">
+              خلّ <span>حركة</span> تهتم بسيارتك
+              وانت مرتاح.
+            </h1>
 
-        function changeImage() {
-            const selectedDesign = document.getElementById("design").value;
-            img.src = images[selectedDesign];
-            img.onload = function() { drawImage(); };
-        }
+            <p class="hero-subtitle">
+              حركة – hrkh مركز صيانة سيارات يهتم بالخدمات الأساسية اليومية: تغيير الزيت، الفلاتر،
+              الفحص السريع قبل السفر، مع تجربة مرتّبة وواضحة من أول ما توصل إلى ما تستلم سيارتك.
+            </p>
 
-        function drawText() {
-            const name = document.getElementById("nameLabel").value;
-            if (name.trim() !== "") {
-                const canvas = document.getElementById("canvas");
-                const ctx = canvas.getContext("2d");
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                ctx.font = "bold 30px Arial";
-                ctx.fillStyle = "#ffffff";
-                ctx.textAlign = "center";
-                ctx.fillText(name, canvas.width / 2, canvas.height - 30);
-            }
-        }
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#booking">
+                احجز موعدك الآن
+                <span>→</span>
+              </a>
+              <a class="btn btn-outline" href="#services">
+                استعراض خدمات حركة
+              </a>
+            </div>
 
-        function downloadImage() {
-            const canvas = document.getElementById("canvas");
-            if (!canvas || !canvas.getContext) {
-                alert("حدث خطأ: لا يوجد عنصر canvas للتحميل.");
-                return;
-            }
-            const ctx = canvas.getContext("2d");
-            if (!ctx) {
-                alert("حدث خطأ: لا يمكن الحصول على السياق الرسومي للـ canvas.");
-                return;
-            }
-            const link = document.createElement("a");
-            link.download = "eid-greeting.png";
-            link.href = canvas.toDataURL("image/png");
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    </script>
+            <div class="hero-note">
+              <strong>بدون انتظار طويل</strong> – أغلب خدمات تغيير الزيت تنتهي في أقل
+              من ٣٠ دقيقة حسب حالة السيارة.
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat-card">
+                <div class="stat-label">سيارات خدمناها</div>
+                <div class="stat-value">+15,000</div>
+                <div class="stat-hint">منذ انطلاق حركة</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">متوسط زمن الخدمة</div>
+                <div class="stat-value">30 دقيقة</div>
+                <div class="stat-hint">لتغيير الزيت والفحص السريع</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">رضا العملاء</div>
+                <div class="stat-value">+4.8 ⭐</div>
+                <div class="stat-hint">تقييمات عالية واستمرار رجوع العملاء</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- لوحة خدمات بشكل بصري -->
+          <div class="hero-visual">
+            <div class="hero-panel">
+              <div class="hero-panel-header">
+                <div class="hero-dots">
+                  <span class="hero-dot"></span>
+                  <span class="hero-dot"></span>
+                  <span class="hero-dot"></span>
+                </div>
+                <div class="hero-panel-title">لوحة خدمات حركة</div>
+                <div class="hero-panel-tag">متاح للحجز اليوم</div>
+              </div>
+
+              <div class="hero-panel-body">
+                <div class="hero-panel-list">
+                  <div class="hero-pill-item">
+                    تغيير زيت المحرك
+                    <span>مع فحص مستوى السوائل</span>
+                  </div>
+                  <div class="hero-pill-item">
+                    فحص سريع قبل السفر
+                    <span>إطارات – فرامل – بطارية</span>
+                  </div>
+                  <div class="hero-pill-item">
+                    تغيير فلاتر الهواء والمكيف
+                    <span>قطع مناسبة لسيارتك</span>
+                  </div>
+                </div>
+
+                <div class="hero-card-mini">
+                  <strong>عرض خاص عند الحجز أونلاين</strong>
+                  <span>خصم على تغيير الزيت أو إضافة فحص مجاني عند الحجز من الموقع أو الواتساب.</span>
+                  <span>⏱ عدد محدود من الحجوزات لكل يوم</span>
+                </div>
+              </div>
+
+              <div class="hero-ribbon">
+                احجز وقتك – ادخل على الموعد – خل حركة تهتم بكل تفاصيل سيارتك ✌️
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== الخدمات الرئيسية ========== -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-block">
+            <div class="section-kicker">الخدمات</div>
+            <h2 class="section-title">كل اللي تحتاجه لسيارتك في مكان واحد</h2>
+            <p class="section-desc">
+              في حركة نهتم بالخدمات الدورية اللي تحافظ على عمر سيارتك وسلامتك على الطريق،
+              مع إمكانية إضافة فحوصات إضافية حسب احتياجك.
+            </p>
+          </div>
+
+          <a class="section-link" href="#booking">
+            احجز خدمة الآن
+          </a>
+        </div>
+
+        <div class="cards-grid">
+          <!-- خدمة ١ -->
+          <article class="card">
+            <span class="card-badge">الأكثر طلبًا</span>
+            <h3 class="card-title">تغيير زيت المحرك والفلاتر</h3>
+            <p class="card-text">
+              تغيير زيت المحرك بزيوت متوافقة مع مواصفات سيارتك، مع تغيير فلتر الزيت،
+              وفحص سريع لمستوى السوائل وتنبيهات الطبلون قبل تسليم السيارة.
+            </p>
+            <div class="card-meta">
+              <span>المدة التقريبية: <strong>30 دقيقة</strong></span>
+              <span>يشمل: زيت + فلتر</span>
+            </div>
+            <div class="card-footer">
+              <span>إمكانية تذكيرك بمواعيد التغيير القادمة</span>
+              <a href="#booking">
+                <button>احجز تغيير زيت</button>
+              </a>
+            </div>
+          </article>
+
+          <!-- خدمة ٢ -->
+          <article class="card">
+            <span class="card-badge">صيانة سريعة</span>
+            <h3 class="card-title">فحص سريع قبل السفر</h3>
+            <p class="card-text">
+              مراجعة نقاط السلامة الأساسية: هواء الإطارات، الفرامل، الزيوت، الأنوار،
+              والبطارية، عشان تسافر وانت مطمّن أن سيارتك جاهزة للمشوار.
+            </p>
+            <div class="card-meta">
+              <span>المدة: <strong>40 دقيقة</strong></span>
+              <span>تقرير مختصر للحالة</span>
+            </div>
+            <div class="card-footer">
+              <span>يناسب الرحلات الطويلة والطرق السريعة</span>
+              <a href="#booking">
+                <button>احجز فحص سفر</button>
+              </a>
+            </div>
+          </article>
+
+          <!-- خدمة ٣ -->
+          <article class="card">
+            <span class="card-badge">فحص شامل</span>
+            <h3 class="card-title">فحص سيارة قبل الشراء</h3>
+            <p class="card-text">
+              فحص عام لحالة السيارة الخارجية والميكانيكية والكهربائية قبل الشراء،
+              يساعدك تتخذ قرارك بثقة ويكشف لك الملاحظات والتكاليف المتوقعة مستقبلاً.
+            </p>
+            <div class="card-meta">
+              <span>حسب نوع السيارة</span>
+              <span>تقرير مفصل</span>
+            </div>
+            <div class="card-footer">
+              <span>قلّل مفاجآت ما بعد الشراء</span>
+              <a href="#booking">
+                <button>احجز فحص شراء</button>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== لماذا حركة؟ ========== -->
+    <section id="why-us">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-block">
+            <div class="section-kicker">ليش حركة؟</div>
+            <h2 class="section-title">تجربة صيانة واضحة ومريحة</h2>
+            <p class="section-desc">
+              حركة مبنية على فكرة أن صيانة السيارة ما لازم تكون تجربة متعبة. وضوح في الخدمة،
+              شفافية في الأسعار، وتجربة مرتبة من أول اتصال إلى آخر خطوة.
+            </p>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature">
+            <div class="feature-icon">🧰</div>
+            <h3 class="feature-title">فنيين خبرة وتجهيزات حديثة</h3>
+            <p>
+              فريق حركة مدرّب على التعامل مع أغلب أنواع السيارات، باستخدام أدوات حديثة
+              تساعد في تقديم خدمة أدق وأسرع.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">✅</div>
+            <h3 class="feature-title">شفافية في الخدمة والتسعير</h3>
+            <p>
+              قبل نبدأ أي خدمة، نوضح لك نوع الزيت/القطع والتكلفة المتوقعة،
+              وما يتم أي إجراء إضافي إلا بعد موافقتك.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">📱</div>
+            <h3 class="feature-title">حجز ومتابعة عبر الواتساب</h3>
+            <p>
+              تقدر تحجز، وتستفسر، وترسل صور عداد أو تنبيهات الطبلون عبر الواتساب،
+              وفريق حركة يرد عليك ويجهّز لك الموعد المناسب.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== دعوة للحجز ========== -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2 class="cta-title">جاهز ترتّب موعد لصيانة سيارتك مع حركة؟</h2>
+            <p class="cta-text">
+              عبّئ نموذج الحجز أو راسلنا مباشرة على الواتساب، وفريق حركة ينظم لك زيارة
+              سريعة بدون انتظار طويل، مع اقتراح أنسب خدمة لحالة سيارتك.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="#booking">حجز موعد الآن</a>
+            <a class="btn btn-outline" href="https://wa.me/WA_NUMBER_HERE" target="_blank">
+              تواصل عبر واتساب
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== نموذج الحجز ========== -->
+    <section class="form-section" id="booking">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-block">
+            <div class="section-kicker">حجز موعد</div>
+            <h2 class="section-title">عبّئ بياناتك وسيتم التواصل معك لتأكيد الحجز</h2>
+            <p class="section-desc">
+              البيانات تساعدنا نجهز الزيت أو الخدمة المناسبة قبل وصولك، وننسق معك الوقت اللي يناسبك.
+            </p>
+          </div>
+        </div>
+
+        <div class="form-layout">
+          <!-- نموذج -->
+          <div class="form-card">
+            <h3>بيانات الحجز</h3>
+            <p>عبّئ الحقول التالية، وفريق حركة يتواصل معك لتأكيد الموعد والتفاصيل.</p>
+
+            <form>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="name">الاسم الكامل</label>
+                  <input class="form-control" id="name" type="text" placeholder="مثال: أحمد بن علي" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">رقم الجوال</label>
+                  <input class="form-control" id="phone" type="tel" placeholder="05XXXXXXXX" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="car">نوع السيارة</label>
+                  <input class="form-control" id="car" type="text" placeholder="مثال: هيونداي سوناتا 2022" />
+                </div>
+
+                <div class="form-group">
+                  <label for="service">الخدمة المطلوبة</label>
+                  <select class="form-control" id="service">
+                    <option>اختيار الخدمة</option>
+                    <option>تغيير زيت المحرك</option>
+                    <option>فحص سريع قبل السفر</option>
+                    <option>فحص سيارة قبل الشراء</option>
+                    <option>خدمة أخرى</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="time">الوقت المفضّل للزيارة</label>
+                <input class="form-control" id="time" type="text" placeholder="مثال: مساء الخميس / بعد ٦ مساءً" />
+              </div>
+
+              <div class="form-group">
+                <label for="notes">ملاحظات إضافية</label>
+                <textarea id="notes" placeholder="اكتب أي ملاحظات عن حالة السيارة أو أصوات/تنبيهات تلاحظها..."></textarea>
+              </div>
+
+              <div style="margin-top: 0.9rem; display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap;">
+                <button class="btn btn-primary" type="submit">إرسال الطلب</button>
+                <button class="btn btn-outline" type="button">مسح الحقول</button>
+              </div>
+
+              <div class="form-footer-note">
+                بعد إرسال الطلب، سيقوم فريق حركة بالتواصل معك على الجوال أو الواتساب
+                لتأكيد الموعد والتكلفة التقديرية قبل تنفيذ أي خدمة.
+              </div>
+            </form>
+          </div>
+
+          <!-- معلومات جانبية -->
+          <aside class="form-side">
+            <div class="form-side-highlight">
+              أفضل وقت للحجز هو قبل زيارتك بوقت كافي، عشان نضمن لك أقل وقت انتظار
+              وتجربة سلسة داخل المركز.
+            </div>
+
+            <p>
+              بعد استلام طلبك، فريق حركة يتواصل معك خلال أوقات العمل لتأكيد:
+            </p>
+
+            <ul class="form-side-list">
+              <li>وقت الحضور الأنسب حسب جدولك.</li>
+              <li>نوع الخدمة/الزيت المناسب لسيارتك.</li>
+              <li>أي عروض أو باقات متاحة وقت الحجز.</li>
+            </ul>
+
+            <p>
+              تقدر تضيف ملاحظات مثل: "صوت في الفرامل"، "اهتزاز على سرعة معينة"،
+              أو صور من عداد الكيلومترات وتنبيهات الطبلون، عشان نساعدك في تشخيص أولي قبل الزيارة.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== الموقع والفوتر ========== -->
+  <footer id="location">
+    <div class="container">
+      <div class="footer-row" style="margin-bottom: 0.8rem;">
+        <div>
+          © <span id="year"></span> حركة – hrkh. جميع الحقوق محفوظة.
+        </div>
+        <div class="footer-links">
+          <a href="#hero">عن حركة</a>
+          <a href="#services">الخدمات</a>
+          <a href="#booking">حجز موعد</a>
+          <a href="https://wa.me/WA_NUMBER_HERE" target="_blank">تواصل عبر واتساب</a>
+        </div>
+      </div>
+
+      <div style="font-size: 0.8rem; color: #c7c7c7;">
+        موقعنا: الرياض – حي (اكتب اسم الحي)، شارع (اسم الشارع)، بالقرب من (علامة مميزة).  
+        <br />
+        أوقات العمل: من الأحد إلى الخميس – من ٩ صباحًا حتى ١٠ مساءً، والجمعة من ٤ مساءً حتى ١٠ مساءً.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // تعيين السنة تلقائيًا في الفوتر
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
