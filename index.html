@@ -15,10 +15,9 @@
        إعدادات عامة و هوية حركة
        ========================= */
     :root {
-      /* ألوان من الهوية */
-      --color-primary: #6c50a0;      /* بنفسجي حركة الرئيسي */
-      --color-primary-dark: #5054a0; /* بنفسجي ثانوي أغمق */
-      --color-accent: #50a098;       /* تركوازي ثانوي */
+      --color-primary: #6c50a0;
+      --color-primary-dark: #5054a0;
+      --color-accent: #50a098;
       --color-bg: #000000;
       --color-section: #111111;
       --color-card: #181818;
@@ -66,7 +65,7 @@
     }
 
     /* =========================
-       الهيدر / شريط التنقل
+       الهيدر
        ========================= */
     header {
       position: sticky;
@@ -103,7 +102,7 @@
     }
 
     .nav-logo img {
-      height: 60px;   /* حجم الشعار */
+      height: 60px;
       width: auto;
       display: block;
     }
@@ -211,7 +210,7 @@
     }
 
     /* =========================
-       قسم الهيرو
+       الهيرو
        ========================= */
     .hero {
       padding: 3.5rem 0 2.5rem;
@@ -319,16 +318,18 @@
       color: #9b9b9b;
     }
 
-    /* جانب الهيرو */
+    /* =========================
+       لوحة خدمات حركة (محدّثة)
+       ========================= */
     .hero-visual {
       position: relative;
     }
 
     .hero-panel {
-      background: radial-gradient(circle at top right, #181818, #050505 60%);
+      background: radial-gradient(circle at top left, #6c50a0, #000000 60%);
       border-radius: var(--radius-xl);
       padding: 1.3rem;
-      border: 1px solid rgba(80, 84, 160, 0.45);
+      border: 1px solid rgba(108, 80, 160, 0.7);
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
@@ -369,16 +370,16 @@
       font-size: 0.7rem;
       padding: 0.15rem 0.55rem;
       border-radius: 999px;
-      border: 1px solid rgba(108, 80, 160, 0.8);
-      background: rgba(0, 0, 0, 0.75);
-      color: #e5ddff;
+      border: 1px solid rgba(199, 199, 199, 0.7);
+      background: rgba(0, 0, 0, 0.35);
+      color: #f9f9f9;
     }
 
     .hero-panel-body {
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0, 0, 0, 0.78);
       border-radius: 18px;
       padding: 1rem;
-      border: 1px solid rgba(60, 60, 60, 0.9);
+      border: 1px solid rgba(108, 80, 160, 0.45);
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 0.9rem;
@@ -393,7 +394,8 @@
     .hero-pill-item {
       padding: 0.6rem 0.7rem;
       border-radius: 999px;
-      background: radial-gradient(circle at right, #5054a0, #050505 70%);
+      background: rgba(0, 0, 0, 0.85);
+      border: 1px solid rgba(199, 199, 199, 0.18);
       font-size: 0.78rem;
       display: flex;
       justify-content: space-between;
@@ -403,18 +405,19 @@
 
     .hero-pill-item span {
       font-size: 0.7rem;
-      color: #c7c7c7;
+      color: var(--color-soft-gray);
     }
 
     .hero-card-mini {
-      background: radial-gradient(circle at top left, #50a098, #050505 60%);
-      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 18px;
       padding: 0.7rem 0.8rem;
       font-size: 0.78rem;
-      color: #04100f;
+      color: #f9f9f9;
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
+      gap: 0.25rem;
+      border: 1px dashed rgba(199, 199, 199, 0.7);
     }
 
     .hero-card-mini strong {
@@ -428,8 +431,8 @@
       right: 4%;
       background: linear-gradient(
         135deg,
-        rgba(108, 80, 160, 0.95),
-        rgba(80, 160, 152, 0.95)
+        rgba(108, 80, 160, 1),
+        rgba(80, 160, 152, 1)
       );
       border-radius: 999px;
       padding: 0.5rem 1rem;
@@ -685,11 +688,6 @@
       color: #f9f9f9;
     }
 
-    .form-group small {
-      color: var(--color-text-muted);
-      font-size: 0.7rem;
-    }
-
     .form-control,
     textarea {
       background: #050505;
@@ -831,7 +829,6 @@
         align-items: flex-start;
       }
 
-      /* تصغير الشعار في الجوال شوي */
       .nav-logo img {
         height: 48px;
       }
@@ -943,7 +940,7 @@
             </div>
           </div>
 
-          <!-- لوحة خدمات بشكل بصري -->
+          <!-- لوحة خدمات حركة -->
           <div class="hero-visual">
             <div class="hero-panel">
               <div class="hero-panel-header">
@@ -1120,7 +1117,7 @@
       <div class="container">
         <div class="cta-box">
           <div>
-            <h2 class="cta-title">جاهز ترتّب موعدين لصيانة سيارتك مع حركة؟</h2>
+            <h2 class="cta-title">جاهز ترتّب موعد لصيانة سيارتك مع حركة؟</h2>
             <p class="cta-text">
               عبّئ نموذج الحجز أو راسلنا مباشرة على الواتساب، وفريق حركة ينظم لك زيارة
               سريعة بدون انتظار طويل، مع اقتراح أنسب خدمة لحالة سيارتك.
@@ -1250,7 +1247,7 @@
       </div>
 
       <div style="font-size: 0.8rem; color: #c7c7c7;">
-        موقعنا: الرياض – حي (اكتب اسم الحي)، شارع (اسم الشارع)، بالقرب من (علامة مميزة).  
+        موقعنا: الرياض – حي الفيحاء ، شارع هارون الرشيد، بالقرب من (شركة نادك).  
         <br />
         أوقات العمل: من الأحد إلى الخميس – من ٩ صباحًا حتى ١٠ مساءً، والجمعة من ٤ مساءً حتى ١٠ مساءً.
       </div>
@@ -1258,7 +1255,6 @@
   </footer>
 
   <script>
-    // تعيين السنة تلقائيًا في الفوتر
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
