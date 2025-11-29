@@ -97,17 +97,15 @@
     }
 
     .nav-logo {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, #6c50a0, #50a098 50%, #000000);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
-      font-size: 1.2rem;
-      color: #f9f9f9;
-      text-transform: lowercase;
+    }
+
+    .nav-logo img {
+      height: 60px;   /* حجم الشعار */
+      width: auto;
+      display: block;
     }
 
     .nav-title {
@@ -832,6 +830,11 @@
         flex-direction: column;
         align-items: flex-start;
       }
+
+      /* تصغير الشعار في الجوال شوي */
+      .nav-logo img {
+        height: 48px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -856,8 +859,9 @@
     <div class="container">
       <nav class="nav">
         <div class="nav-left">
-          <!-- تقدر تستبدل هذا الديف بصورة شعار حركة -->
-          <div class="nav-logo">hr</div>
+          <div class="nav-logo">
+            <img src="https://i.postimg.cc/vZRpWYDG/HRKH-Logo-versions-03.png" alt="شعار حركة hrkh" />
+          </div>
           <div class="nav-title">
             <div class="nav-title-main">حركة – hrkh</div>
             <div class="nav-title-sub">مركز صيانة سيارات وخدمات تغيير الزيت</div>
@@ -1116,7 +1120,7 @@
       <div class="container">
         <div class="cta-box">
           <div>
-            <h2 class="cta-title">جاهز ترتّب موعد لصيانة سيارتك مع حركة؟</h2>
+            <h2 class="cta-title">جاهز ترتّب موعدين لصيانة سيارتك مع حركة؟</h2>
             <p class="cta-text">
               عبّئ نموذج الحجز أو راسلنا مباشرة على الواتساب، وفريق حركة ينظم لك زيارة
               سريعة بدون انتظار طويل، مع اقتراح أنسب خدمة لحالة سيارتك.
