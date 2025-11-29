@@ -11,9 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================
-       إعدادات عامة و هوية حركة
-       ========================= */
     :root {
       --color-primary: #6c50a0;
       --color-primary-dark: #5054a0;
@@ -64,9 +61,7 @@
       padding: 0 1.5rem;
     }
 
-    /* =========================
-       الهيدر
-       ========================= */
+    /* ========== الهيدر ========== */
     header {
       position: sticky;
       top: 0;
@@ -101,8 +96,9 @@
       justify-content: center;
     }
 
-    .nav-logo img {
-      height: 60px;
+    /* الشعار SVG من GitHub */
+    .hrkh-logo {
+      height: 80px;       /* كبّر/صغّر من هنا: جرّب 72 أو 90 حسب اللي يعجبك */
       width: auto;
       display: block;
     }
@@ -209,9 +205,7 @@
       font-size: 0.9rem;
     }
 
-    /* =========================
-       الهيرو
-       ========================= */
+    /* ========== الهيرو ========== */
     .hero {
       padding: 3.5rem 0 2.5rem;
     }
@@ -318,9 +312,7 @@
       color: #9b9b9b;
     }
 
-    /* =========================
-       لوحة خدمات حركة (محدّثة)
-       ========================= */
+    /* ========== لوحة خدمات حركة ========== */
     .hero-visual {
       position: relative;
     }
@@ -443,9 +435,7 @@
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
     }
 
-    /* =========================
-       الأقسام العامة
-       ========================= */
+    /* ========== الأقسام العامة ========== */
     section {
       padding: 2.5rem 0;
     }
@@ -505,8 +495,6 @@
       display: flex;
       flex-direction: column;
       gap: 0.6rem;
-      position: relative;
-      overflow: hidden;
     }
 
     .card-badge {
@@ -560,9 +548,7 @@
       cursor: pointer;
     }
 
-    /* =========================
-       لماذا حركة؟
-       ========================= */
+    /* ========== لماذا حركة؟ ========== */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -600,9 +586,7 @@
       color: #f9f9f9;
     }
 
-    /* =========================
-       دعوة للحجز
-       ========================= */
+    /* ========== دعوة للحجز ========== */
     .cta-section {
       padding: 2.5rem 0;
     }
@@ -638,9 +622,7 @@
       gap: 0.8rem;
     }
 
-    /* =========================
-       نموذج الحجز
-       ========================= */
+    /* ========== نموذج الحجز ========== */
     .form-section {
       padding: 0 0 3rem;
     }
@@ -749,9 +731,7 @@
       color: #6c50a0;
     }
 
-    /* =========================
-       الفوتر
-       ========================= */
+    /* ========== الفوتر ========== */
     footer {
       border-top: 1px solid #262626;
       padding: 1.5rem 0 2rem;
@@ -778,9 +758,7 @@
       font-size: 0.78rem;
     }
 
-    /* =========================
-       استجابة الشاشات
-       ========================= */
+    /* ========== استجابة الشاشات ========== */
     @media (max-width: 960px) {
       .hero-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -829,8 +807,8 @@
         align-items: flex-start;
       }
 
-      .nav-logo img {
-        height: 48px;
+      .hrkh-logo {
+        height: 60px;
       }
     }
 
@@ -857,7 +835,11 @@
       <nav class="nav">
         <div class="nav-left">
           <div class="nav-logo">
-            <img src="https://i.postimg.cc/vZRpWYDG/HRKH-Logo-versions-03.png" alt="شعار حركة hrkh" />
+            <img
+              src="https://raw.githubusercontent.com/iRayyankoo/hrkh-assets/main/hrkh_purp%20copy.svg"
+              alt="شعار حركة hrkh"
+              class="hrkh-logo"
+            />
           </div>
           <div class="nav-title">
             <div class="nav-title-main">حركة – hrkh</div>
@@ -1194,7 +1176,7 @@
 
               <div style="margin-top: 0.9rem; display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap;">
                 <button class="btn btn-primary" type="submit">إرسال الطلب</button>
-                <button class="btn btn-outline" type="button">مسح الحقول</button>
+                <button class="btn btn-outline" type="reset">مسح الحقول</button>
               </div>
 
               <div class="form-footer-note">
@@ -1247,7 +1229,7 @@
       </div>
 
       <div style="font-size: 0.8rem; color: #c7c7c7;">
-        موقعنا: الرياض – حي الفيحاء ، شارع هارون الرشيد، بالقرب من (شركة نادك).  
+        موقعنا: الرياض – حي (اكتب اسم الحي)، شارع (اسم الشارع)، بالقرب من (علامة مميزة).  
         <br />
         أوقات العمل: من الأحد إلى الخميس – من ٩ صباحًا حتى ١٠ مساءً، والجمعة من ٤ مساءً حتى ١٠ مساءً.
       </div>
