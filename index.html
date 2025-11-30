@@ -96,9 +96,8 @@
       justify-content: center;
     }
 
-    /* الشعار SVG من GitHub */
     .hrkh-logo {
-      height: 80px;       /* كبّر/صغّر من هنا: جرّب 72 أو 90 حسب اللي يعجبك */
+      height: 80px;
       width: auto;
       display: block;
     }
@@ -277,10 +276,6 @@
       color: var(--color-soft-gray);
     }
 
-    .hero-note strong {
-      color: #f9f9f9;
-    }
-
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -312,7 +307,7 @@
       color: #9b9b9b;
     }
 
-    /* ========== لوحة خدمات حركة ========== */
+    /* ========== لوحة الخدمات ========== */
     .hero-visual {
       position: relative;
     }
@@ -320,7 +315,7 @@
     .hero-panel {
       background: radial-gradient(circle at top left, #6c50a0, #000000 60%);
       border-radius: var(--radius-xl);
-      padding: 1.3rem;
+      padding: 1.3rem 1.3rem 1.9rem;
       border: 1px solid rgba(108, 80, 160, 0.7);
       box-shadow: var(--shadow-soft);
       position: relative;
@@ -373,7 +368,7 @@
       padding: 1rem;
       border: 1px solid rgba(108, 80, 160, 0.45);
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
       gap: 0.9rem;
     }
 
@@ -403,7 +398,7 @@
     .hero-card-mini {
       background: rgba(0, 0, 0, 0.7);
       border-radius: 18px;
-      padding: 0.7rem 0.8rem;
+      padding: 0.9rem 0.85rem;
       font-size: 0.78rem;
       color: #f9f9f9;
       display: flex;
@@ -417,10 +412,7 @@
     }
 
     .hero-ribbon {
-      position: absolute;
-      bottom: -12px;
-      left: 4%;
-      right: 4%;
+      margin-top: 0.9rem;
       background: linear-gradient(
         135deg,
         rgba(108, 80, 160, 1),
@@ -548,6 +540,68 @@
       cursor: pointer;
     }
 
+    /* ========== بنرات دعائية ========== */
+    .promo-section {
+      padding: 2.2rem 0;
+    }
+
+    .promo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .promo-banner {
+      border-radius: 18px;
+      padding: 1rem 1.1rem;
+      color: #f9f9f9;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6);
+      font-size: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.5rem;
+      min-height: 170px;
+    }
+
+    .promo-banner-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .promo-banner-tag {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(249, 249, 249, 0.7);
+      display: inline-block;
+      margin-bottom: 0.4rem;
+    }
+
+    .promo-banner-note {
+      font-size: 0.78rem;
+      color: #f1f1f1;
+    }
+
+    .promo-banner-badge {
+      font-size: 0.78rem;
+      opacity: 0.9;
+      margin-top: 0.5rem;
+    }
+
+    .promo-banner-1 {
+      background: linear-gradient(135deg, #6c50a0, #5054a0);
+    }
+
+    .promo-banner-2 {
+      background: linear-gradient(135deg, #50a098, #6c50a0);
+    }
+
+    .promo-banner-3 {
+      background: linear-gradient(135deg, #5054a0, #111111);
+    }
+
     /* ========== لماذا حركة؟ ========== */
     .features-grid {
       display: grid;
@@ -586,40 +640,96 @@
       color: #f9f9f9;
     }
 
-    /* ========== دعوة للحجز ========== */
-    .cta-section {
-      padding: 2.5rem 0;
+    /* ========== خريطة الموقع ========== */
+    .map-section {
+      padding: 2.7rem 0 2.8rem;
+      background: radial-gradient(circle at top, #101010, #050505 55%, #000000);
+      border-top: 1px solid #262626;
+      border-bottom: 1px solid #262626;
     }
 
-    .cta-box {
-      background: radial-gradient(circle at top left, #6c50a0, #000000 60%);
-      border-radius: 24px;
-      padding: 1.8rem 1.5rem;
+    .map-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .map-info-card {
+      background: #050505;
+      border-radius: 20px;
+      border: 1px solid #262626;
+      padding: 0.9rem 1rem;
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7);
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1.5rem;
-      align-items: center;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(108, 80, 160, 0.7);
+      flex-direction: column;
+      gap: 0.55rem;
     }
 
-    .cta-title {
-      font-size: 1.15rem;
+    .map-info-title {
+      font-size: 1.1rem;
       font-weight: 700;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.2rem;
     }
 
-    .cta-text {
+    .map-info-text {
       font-size: 0.85rem;
-      color: var(--color-soft-gray);
-      max-width: 26rem;
+      color: #c7c7c7;
     }
 
-    .cta-actions {
+    .map-info-list {
+      list-style: none;
+      padding-right: 1rem;
+      font-size: 0.8rem;
+      color: #dddddd;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin: 0.6rem 0;
+    }
+
+    .map-info-list li::before {
+      content: "•";
+      margin-left: 0.3rem;
+      color: #6c50a0;
+    }
+
+    .map-note {
+      font-size: 0.78rem;
+      color: #a0a0a0;
+    }
+
+    .map-card {
+      background: #050505;
+      border-radius: 20px;
+      border: 1px solid #262626;
+      padding: 0.8rem 0.9rem 0.8rem;
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .map-tag {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      border: 1px dashed rgba(199, 199, 199, 0.7);
+      align-self: flex-start;
+      color: #f9f9f9;
+    }
+
+    .map-embed iframe {
+      width: 100%;
+      min-height: 260px;
+      border: 0;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
+    }
+
+    .map-badge {
+      font-size: 0.76rem;
+      color: #c7c7c7;
     }
 
     /* ========== نموذج الحجز ========== */
@@ -731,6 +841,27 @@
       color: #6c50a0;
     }
 
+    .form-success {
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      color: #e0f4f1;
+      background: rgba(80, 160, 152, 0.18);
+      border-radius: 999px;
+      padding: 0.6rem 0.9rem;
+      border: 1px solid rgba(80, 160, 152, 0.7);
+    }
+
+    .form-success button {
+      margin-right: 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(199, 199, 199, 0.5);
+      background: rgba(0, 0, 0, 0.5);
+      color: #e0f4f1;
+      font-size: 0.78rem;
+      padding: 0.25rem 0.7rem;
+      cursor: pointer;
+    }
+
     /* ========== الفوتر ========== */
     footer {
       border-top: 1px solid #262626;
@@ -745,6 +876,7 @@
       gap: 1rem;
       font-size: 0.78rem;
       color: #a3a3a3;
+      align-items: center;
     }
 
     .footer-links {
@@ -756,6 +888,30 @@
     .footer-links a {
       color: #c7c7c7;
       font-size: 0.78rem;
+    }
+
+    .footer-switches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.8rem;
+    }
+
+    .footer-switch {
+      font-size: 0.78rem;
+      border-radius: 999px;
+      border: 1px solid #444;
+      background: #111;
+      color: #f9f9f9;
+      padding: 0.35rem 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .footer-switch:hover {
+      border-color: var(--color-accent);
     }
 
     /* ========== استجابة الشاشات ========== */
@@ -770,6 +926,10 @@
       }
 
       .form-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .map-layout {
         grid-template-columns: minmax(0, 1fr);
       }
     }
@@ -793,7 +953,8 @@
       }
 
       .cards-grid,
-      .features-grid {
+      .features-grid,
+      .promo-grid {
         grid-template-columns: minmax(0, 1fr);
       }
 
@@ -802,13 +963,12 @@
         align-items: flex-start;
       }
 
-      .cta-box {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
       .hrkh-logo {
         height: 60px;
+      }
+
+      .hero-panel-body {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
 
@@ -825,11 +985,141 @@
         font-size: 1.9rem;
       }
     }
+
+    /* ========== وضع فاتح (منسّق بالهوية) ========== */
+    body.light-theme {
+      --color-text-main: #111111;
+      --color-text-muted: #555555;
+      --color-card: #ffffff;
+      --color-border: #dddddd;
+
+      background: radial-gradient(circle at top, #f9f9ff 0, #f3f3f7 45%, #eeeeee 100%);
+      color: var(--color-text-main);
+    }
+
+    body.light-theme header {
+      background: rgba(249, 249, 255, 0.96);
+      border-bottom-color: #e2e2ee;
+    }
+
+    body.light-theme .nav-links a {
+      color: #444444;
+    }
+
+    body.light-theme .nav-title-sub {
+      color: #777777;
+    }
+
+    body.light-theme .card,
+    body.light-theme .feature,
+    body.light-theme .map-info-card,
+    body.light-theme .map-card,
+    body.light-theme .form-card {
+      background: #ffffff;
+      border-color: #e2e2ee;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+    }
+
+    body.light-theme .hero-panel {
+      background: radial-gradient(circle at top left, #f5f1ff, #ffffff 65%);
+      border-color: rgba(108, 80, 160, 0.4);
+    }
+
+    body.light-theme .hero-panel-body {
+      background: #f7f6ff;
+      border-color: rgba(108, 80, 160, 0.25);
+    }
+
+    body.light-theme .hero-card-mini {
+      background: #ffffff;
+      border-color: rgba(108, 80, 160, 0.25);
+      color: #333333;
+    }
+
+    body.light-theme .hero-pill-item {
+      background: #ffffff;
+      border-color: #e2e2ee;
+      color: #222222;
+    }
+
+    body.light-theme .stat-card {
+      background: #ffffff;
+      border-color: #e2e2ee;
+    }
+
+    body.light-theme .section-kicker {
+      color: #777777;
+    }
+
+    body.light-theme .section-desc {
+      color: #555555;
+    }
+
+    body.light-theme .promo-banner-1 {
+      background: linear-gradient(135deg, #7a64c0, #e7e1ff);
+      color: #1a1633;
+    }
+
+    body.light-theme .promo-banner-2 {
+      background: linear-gradient(135deg, #50a098, #dff6f1);
+      color: #103733;
+    }
+
+    body.light-theme .promo-banner-3 {
+      background: linear-gradient(135deg, #5054a0, #ebe9ff);
+      color: #191b3d;
+    }
+
+    body.light-theme .promo-banner-note {
+      color: #222222;
+    }
+
+    body.light-theme .promo-banner-tag {
+      border-color: rgba(0, 0, 0, 0.15);
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    body.light-theme .map-section {
+      background: #f5f5fb;
+      border-top-color: #e0e0ee;
+      border-bottom-color: #e0e0ee;
+    }
+
+    body.light-theme .map-info-text,
+    body.light-theme .map-badge,
+    body.light-theme .map-note {
+      color: #555555;
+    }
+
+    body.light-theme .form-control,
+    body.light-theme textarea {
+      background: #fcfcff;
+      border-color: #ccccdd;
+      color: #111111;
+    }
+
+    body.light-theme .form-side-highlight {
+      background: #f7f6ff;
+      border-color: #d9d5ff;
+      color: #222222;
+    }
+
+    body.light-theme .footer-switch {
+      background: #ffffff;
+      color: #333333;
+      border-color: #cccccc;
+    }
+
+    body.light-theme footer {
+      background: #ffffff;
+      border-top-color: #e0e0ee;
+    }
+
   </style>
 </head>
 
 <body>
-  <!-- ========== الهيدر ========== -->
+  <!-- الهيدر -->
   <header>
     <div class="container">
       <nav class="nav">
@@ -843,86 +1133,91 @@
           </div>
           <div class="nav-title">
             <div class="nav-title-main">حركة – hrkh</div>
-            <div class="nav-title-sub">مركز صيانة سيارات وخدمات تغيير الزيت</div>
+            <div class="nav-title-sub" data-i18n="nav.subtitle">
+              مركز صيانة سيارات وخدمات تغيير الزيت
+            </div>
           </div>
         </div>
 
         <div class="nav-links">
-          <a href="#hero">الرئيسية</a>
-          <a href="#services">الخدمات</a>
-          <a href="#why-us">لماذا حركة؟</a>
-          <a href="#booking">حجز موعد</a>
-          <a href="#location">الموقع</a>
+          <a href="#hero" data-i18n="nav.home">الرئيسية</a>
+          <a href="#services" data-i18n="nav.services">الخدمات</a>
+          <a href="#why-us" data-i18n="nav.why">لماذا حركة؟</a>
+          <a href="#booking" data-i18n="nav.booking">حجز موعد</a>
+          <a href="#location" data-i18n="nav.location">الموقع</a>
         </div>
 
         <div class="nav-cta">
-          <a class="btn btn-outline" href="tel:05XXXXXXXX">اتصل بنا</a>
-          <a class="btn btn-primary" href="https://wa.me/WA_NUMBER_HERE" target="_blank">
+          <a class="btn btn-outline" href="tel:05XXXXXXXX" data-i18n="nav.call">
+            اتصل بنا
+          </a>
+          <a class="btn btn-primary" href="https://wa.me/WA_NUMBER_HERE" target="_blank" data-i18n="nav.whatsapp">
             حجز عبر واتساب
           </a>
         </div>
 
-        <button class="nav-toggle">القائمة</button>
+        <button class="nav-toggle">☰</button>
       </nav>
     </div>
   </header>
 
-  <!-- ========== الهيرو ========== -->
   <main>
+    <!-- هيرو -->
     <section class="hero" id="hero">
       <div class="container">
         <div class="hero-grid">
           <div>
             <div class="hero-badge-row">
-              <span class="hero-badge">خدمة سريعة وانت في السيارة</span>
-              <span class="hero-pill">تغيير زيت – فلاتر – فحص سريع</span>
+              <span class="hero-badge" data-i18n="hero.badge">
+                خدمة سريعة وانت في السيارة
+              </span>
+              <span class="hero-pill" data-i18n="hero.pill">
+                تغيير زيت – فلاتر – فحص سريع
+              </span>
             </div>
 
-            <h1 class="hero-title">
-              خلّ <span>حركة</span> تهتم بسيارتك
-              وانت مرتاح.
+            <h1 class="hero-title" data-i18n-html="hero.title">
+              خلّ <span>حركة</span> تهتم بسيارتك وانت مرتاح.
             </h1>
 
-            <p class="hero-subtitle">
+            <p class="hero-subtitle" data-i18n="hero.subtitle">
               حركة – hrkh مركز صيانة سيارات يهتم بالخدمات الأساسية اليومية: تغيير الزيت، الفلاتر،
               الفحص السريع قبل السفر، مع تجربة مرتّبة وواضحة من أول ما توصل إلى ما تستلم سيارتك.
             </p>
 
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#booking">
+              <a class="btn btn-primary" href="#booking" data-i18n="hero.ctaPrimary">
                 احجز موعدك الآن
-                <span>→</span>
               </a>
-              <a class="btn btn-outline" href="#services">
+              <a class="btn btn-outline" href="#services" data-i18n="hero.ctaSecondary">
                 استعراض خدمات حركة
               </a>
             </div>
 
-            <div class="hero-note">
-              <strong>بدون انتظار طويل</strong> – أغلب خدمات تغيير الزيت تنتهي في أقل
-              من ٣٠ دقيقة حسب حالة السيارة.
+            <div class="hero-note" data-i18n="hero.note">
+              بدون انتظار طويل – أغلب خدمات تغيير الزيت تنتهي في أقل من ٣٠ دقيقة حسب حالة السيارة.
             </div>
 
             <div class="hero-stats">
               <div class="stat-card">
-                <div class="stat-label">سيارات خدمناها</div>
+                <div class="stat-label" data-i18n="hero.stat1Label">سيارات خدمناها</div>
                 <div class="stat-value">+15,000</div>
-                <div class="stat-hint">منذ انطلاق حركة</div>
+                <div class="stat-hint" data-i18n="hero.stat1Hint">منذ انطلاق حركة</div>
               </div>
               <div class="stat-card">
-                <div class="stat-label">متوسط زمن الخدمة</div>
-                <div class="stat-value">30 دقيقة</div>
-                <div class="stat-hint">لتغيير الزيت والفحص السريع</div>
+                <div class="stat-label" data-i18n="hero.stat2Label">متوسط زمن الخدمة</div>
+                <div class="stat-value" data-i18n="hero.stat2Value">30 دقيقة</div>
+                <div class="stat-hint" data-i18n="hero.stat2Hint">لتغيير الزيت والفحص السريع</div>
               </div>
               <div class="stat-card">
-                <div class="stat-label">رضا العملاء</div>
+                <div class="stat-label" data-i18n="hero.stat3Label">رضا العملاء</div>
                 <div class="stat-value">+4.8 ⭐</div>
-                <div class="stat-hint">تقييمات عالية واستمرار رجوع العملاء</div>
+                <div class="stat-hint" data-i18n="hero.stat3Hint">تقييمات عالية واستمرار رجوع العملاء</div>
               </div>
             </div>
           </div>
 
-          <!-- لوحة خدمات حركة -->
+          <!-- لوحة خدمات -->
           <div class="hero-visual">
             <div class="hero-panel">
               <div class="hero-panel-header">
@@ -931,34 +1226,42 @@
                   <span class="hero-dot"></span>
                   <span class="hero-dot"></span>
                 </div>
-                <div class="hero-panel-title">لوحة خدمات حركة</div>
-                <div class="hero-panel-tag">متاح للحجز اليوم</div>
+                <div class="hero-panel-title" data-i18n="hero.panelTitle">
+                  لوحة خدمات حركة
+                </div>
+                <div class="hero-panel-tag" data-i18n="hero.panelTag">
+                  متاح للحجز اليوم
+                </div>
               </div>
 
               <div class="hero-panel-body">
                 <div class="hero-panel-list">
                   <div class="hero-pill-item">
-                    تغيير زيت المحرك
-                    <span>مع فحص مستوى السوائل</span>
+                    <span data-i18n="hero.service1Title">تغيير زيت المحرك</span>
+                    <span data-i18n="hero.service1Sub">مع فحص مستوى السوائل</span>
                   </div>
                   <div class="hero-pill-item">
-                    فحص سريع قبل السفر
-                    <span>إطارات – فرامل – بطارية</span>
+                    <span data-i18n="hero.service2Title">فحص سريع قبل السفر</span>
+                    <span data-i18n="hero.service2Sub">إطارات – فرامل – بطارية</span>
                   </div>
                   <div class="hero-pill-item">
-                    تغيير فلاتر الهواء والمكيف
-                    <span>قطع مناسبة لسيارتك</span>
+                    <span data-i18n="hero.service3Title">تغيير فلاتر الهواء والمكيف</span>
+                    <span data-i18n="hero.service3Sub">قطع مناسبة لسيارتك</span>
                   </div>
                 </div>
 
                 <div class="hero-card-mini">
-                  <strong>عرض خاص عند الحجز أونلاين</strong>
-                  <span>خصم على تغيير الزيت أو إضافة فحص مجاني عند الحجز من الموقع أو الواتساب.</span>
-                  <span>⏱ عدد محدود من الحجوزات لكل يوم</span>
+                  <strong data-i18n="hero.offerTitle">عرض خاص عند الحجز أونلاين</strong>
+                  <span data-i18n="hero.offerText">
+                    خصم 15٪ على أجرة خدمة تغيير الزيت عند الحجز من الموقع أو الواتساب.
+                  </span>
+                  <span data-i18n="hero.offerNote">
+                    ⏱ عدد محدود من الحجوزات المخفضة لكل يوم.
+                  </span>
                 </div>
               </div>
 
-              <div class="hero-ribbon">
+              <div class="hero-ribbon" data-i18n="hero.ribbon">
                 احجز وقتك – ادخل على الموعد – خل حركة تهتم بكل تفاصيل سيارتك ✌️
               </div>
             </div>
@@ -967,81 +1270,96 @@
       </div>
     </section>
 
-    <!-- ========== الخدمات الرئيسية ========== -->
+    <!-- الخدمات -->
     <section id="services">
       <div class="container">
         <div class="section-header">
           <div class="section-title-block">
-            <div class="section-kicker">الخدمات</div>
-            <h2 class="section-title">كل اللي تحتاجه لسيارتك في مكان واحد</h2>
-            <p class="section-desc">
+            <div class="section-kicker" data-i18n="services.kicker">الخدمات</div>
+            <h2 class="section-title" data-i18n="services.title">
+              كل اللي تحتاجه لسيارتك في مكان واحد
+            </h2>
+            <p class="section-desc" data-i18n="services.desc">
               في حركة نهتم بالخدمات الدورية اللي تحافظ على عمر سيارتك وسلامتك على الطريق،
               مع إمكانية إضافة فحوصات إضافية حسب احتياجك.
             </p>
           </div>
 
-          <a class="section-link" href="#booking">
+          <a class="section-link" href="#booking" data-i18n="services.link">
             احجز خدمة الآن
           </a>
         </div>
 
         <div class="cards-grid">
-          <!-- خدمة ١ -->
           <article class="card">
-            <span class="card-badge">الأكثر طلبًا</span>
-            <h3 class="card-title">تغيير زيت المحرك والفلاتر</h3>
-            <p class="card-text">
+            <span class="card-badge" data-i18n="services.card1Badge">الأكثر طلبًا</span>
+            <h3 class="card-title" data-i18n="services.card1Title">
+              تغيير زيت المحرك والفلاتر
+            </h3>
+            <p class="card-text" data-i18n="services.card1Text">
               تغيير زيت المحرك بزيوت متوافقة مع مواصفات سيارتك، مع تغيير فلتر الزيت،
               وفحص سريع لمستوى السوائل وتنبيهات الطبلون قبل تسليم السيارة.
             </p>
             <div class="card-meta">
-              <span>المدة التقريبية: <strong>30 دقيقة</strong></span>
-              <span>يشمل: زيت + فلتر</span>
+              <span data-i18n="services.card1Meta1">المدة التقريبية: <strong>30 دقيقة</strong></span>
+              <span data-i18n="services.card1Meta2">يشمل: زيت + فلتر</span>
             </div>
             <div class="card-footer">
-              <span>إمكانية تذكيرك بمواعيد التغيير القادمة</span>
+              <span data-i18n="services.card1FooterText">
+                إمكانية تذكيرك بمواعيد التغيير القادمة
+              </span>
               <a href="#booking">
-                <button>احجز تغيير زيت</button>
+                <button data-i18n="services.card1FooterBtn">احجز تغيير زيت</button>
               </a>
             </div>
           </article>
 
-          <!-- خدمة ٢ -->
           <article class="card">
-            <span class="card-badge">صيانة سريعة</span>
-            <h3 class="card-title">فحص سريع قبل السفر</h3>
-            <p class="card-text">
+            <span class="card-badge" data-i18n="services.card2Badge">صيانة سريعة</span>
+            <h3 class="card-title" data-i18n="services.card2Title">
+              فحص سريع قبل السفر
+            </h3>
+            <p class="card-text" data-i18n="services.card2Text">
               مراجعة نقاط السلامة الأساسية: هواء الإطارات، الفرامل، الزيوت، الأنوار،
               والبطارية، عشان تسافر وانت مطمّن أن سيارتك جاهزة للمشوار.
             </p>
             <div class="card-meta">
-              <span>المدة: <strong>40 دقيقة</strong></span>
-              <span>تقرير مختصر للحالة</span>
+              <span data-i18n="services.card2Meta1">المدة: <strong>40 دقيقة</strong></span>
+              <span data-i18n="services.card2Meta2">تقرير مختصر للحالة</span>
             </div>
             <div class="card-footer">
-              <span>يناسب الرحلات الطويلة والطرق السريعة</span>
+              <span data-i18n="services.card2FooterText">
+                يناسب الرحلات الطويلة والطرق السريعة
+              </span>
               <a href="#booking">
-                <button>احجز فحص سفر</button>
+                <button data-i18n="services.card2FooterBtn">احجز فحص سفر</button>
               </a>
             </div>
           </article>
 
-          <!-- خدمة ٣ -->
           <article class="card">
-            <span class="card-badge">فحص شامل</span>
-            <h3 class="card-title">فحص سيارة قبل الشراء</h3>
-            <p class="card-text">
-              فحص عام لحالة السيارة الخارجية والميكانيكية والكهربائية قبل الشراء،
-              يساعدك تتخذ قرارك بثقة ويكشف لك الملاحظات والتكاليف المتوقعة مستقبلاً.
+            <span class="card-badge" data-i18n="services.card3Badge">هواء ومكيف</span>
+            <h3 class="card-title" data-i18n="services.card3Title">
+              تغيير وتنظيف فلاتر الهواء والمكيف
+            </h3>
+            <p class="card-text" data-i18n="services.card3Text">
+              خدمة تهتم بتنفس سيارتك داخليًا وخارجيًا: تغيير فلتر هواء المحرك وفلتر المكيف
+              (حسب حالة القطع)، مع تنظيف مجرى هواء المكيف لتحسين برودة الهواء وتقليل الروائح.
             </p>
             <div class="card-meta">
-              <span>حسب نوع السيارة</span>
-              <span>تقرير مفصل</span>
+              <span data-i18n="services.card3Meta1">
+                المدة التقريبية: <strong>45 دقيقة</strong>
+              </span>
+              <span data-i18n="services.card3Meta2">
+                يشمل: فلتر واحد أو أكثر حسب الاتفاق
+              </span>
             </div>
             <div class="card-footer">
-              <span>قلّل مفاجآت ما بعد الشراء</span>
+              <span data-i18n="services.card3FooterText">
+                يحسّن عزم السيارة وجودة هواء المقصورة
+              </span>
               <a href="#booking">
-                <button>احجز فحص شراء</button>
+                <button data-i18n="services.card3FooterBtn">احجز خدمة الفلاتر</button>
               </a>
             </div>
           </article>
@@ -1049,14 +1367,80 @@
       </div>
     </section>
 
-    <!-- ========== لماذا حركة؟ ========== -->
+    <!-- بنرات دعائية -->
+    <section class="promo-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-block">
+            <div class="section-kicker" data-i18n="promo.kicker">عروض حركة</div>
+            <h2 class="section-title" data-i18n="promo.title">
+              بنرات دعائية لخدمات أساسية
+            </h2>
+            <p class="section-desc" data-i18n="promo.desc">
+              تقدر تستخدم هذي العروض في الموقع والحملات الرقمية لإبراز أهم خدمات حركة لعملائك.
+            </p>
+          </div>
+        </div>
+
+        <div class="promo-grid">
+          <!-- بنر 1 -->
+          <article class="promo-banner promo-banner-1">
+            <div class="promo-banner-tag" data-i18n="promo.banner1Tag">تغيير الزيت</div>
+            <h3 class="promo-banner-title" data-i18n="promo.banner1Title">
+              باقة تغيير الزيت مع فحص 20 نقطة
+            </h3>
+            <p class="promo-banner-note" data-i18n="promo.banner1Text">
+              زيت مناسب لمواصفات سيارتك + فلتر زيت معتمد، مع فحص سريع لـ 20 نقطة أساسية
+              في السيارة يشمل الإطارات، مستوى السوائل، البطارية، والأنوار قبل تسليم السيارة.
+            </p>
+            <div class="promo-banner-badge" data-i18n="promo.banner1Badge">
+              💰 سعر الباقة يبدأ من <strong>149 ريال</strong> شامل الضريبة – يختلف حسب نوع السيارة والزيت.
+            </div>
+          </article>
+
+          <!-- بنر 2 -->
+          <article class="promo-banner promo-banner-2">
+            <div class="promo-banner-tag" data-i18n="promo.banner2Tag">قبل السفر</div>
+            <h3 class="promo-banner-title" data-i18n="promo.banner2Title">
+              فحص طريق قبل السفر بسعر ثابت 129 ريال
+            </h3>
+            <p class="promo-banner-note" data-i18n="promo.banner2Text">
+              فحص شامل لنقاط السلامة قبل السفر: ضغط الإطارات، حالة الفرامل، البطارية،
+              الزيوت الأساسية، والأنوار الأمامية والخلفية، مع تقرير مختصر يوضح حالة سيارتك.
+            </p>
+            <div class="promo-banner-badge" data-i18n="promo.banner2Badge">
+              🚗 مثالي للرحلات التي تتجاوز <strong>300 كم</strong> داخل وخارج مدينة الرياض.
+            </div>
+          </article>
+
+          <!-- بنر 3 -->
+          <article class="promo-banner promo-banner-3">
+            <div class="promo-banner-tag" data-i18n="promo.banner3Tag">عملاء جدد</div>
+            <h3 class="promo-banner-title" data-i18n="promo.banner3Title">
+              خصم 15٪ لأول زيارة على خدمة تغيير الزيت
+            </h3>
+            <p class="promo-banner-note" data-i18n="promo.banner3Text">
+              أول مرة تزور حركة؟ احصل على خصم <strong>15٪</strong> على أجرة خدمة تغيير الزيت
+              عند الحجز المسبق من الموقع أو الواتساب باستخدام كود <strong>HRKH15</strong>.
+            </p>
+            <div class="promo-banner-badge" data-i18n="promo.banner3Badge">
+              *الخصم يطبق على أجرة الخدمة فقط، ولا يشمل قيمة الزيت أو القطع الإضافية.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- لماذا حركة -->
     <section id="why-us">
       <div class="container">
         <div class="section-header">
           <div class="section-title-block">
-            <div class="section-kicker">ليش حركة؟</div>
-            <h2 class="section-title">تجربة صيانة واضحة ومريحة</h2>
-            <p class="section-desc">
+            <div class="section-kicker" data-i18n="why.kicker">ليش حركة؟</div>
+            <h2 class="section-title" data-i18n="why.title">
+              تجربة صيانة واضحة ومريحة
+            </h2>
+            <p class="section-desc" data-i18n="why.desc">
               حركة مبنية على فكرة أن صيانة السيارة ما لازم تكون تجربة متعبة. وضوح في الخدمة،
               شفافية في الأسعار، وتجربة مرتبة من أول اتصال إلى آخر خطوة.
             </p>
@@ -1066,8 +1450,10 @@
         <div class="features-grid">
           <div class="feature">
             <div class="feature-icon">🧰</div>
-            <h3 class="feature-title">فنيين خبرة وتجهيزات حديثة</h3>
-            <p>
+            <h3 class="feature-title" data-i18n="why.feature1Title">
+              فنيين خبرة وتجهيزات حديثة
+            </h3>
+            <p data-i18n="why.feature1Text">
               فريق حركة مدرّب على التعامل مع أغلب أنواع السيارات، باستخدام أدوات حديثة
               تساعد في تقديم خدمة أدق وأسرع.
             </p>
@@ -1075,8 +1461,10 @@
 
           <div class="feature">
             <div class="feature-icon">✅</div>
-            <h3 class="feature-title">شفافية في الخدمة والتسعير</h3>
-            <p>
+            <h3 class="feature-title" data-i18n="why.feature2Title">
+              شفافية في الخدمة والتسعير
+            </h3>
+            <p data-i18n="why.feature2Text">
               قبل نبدأ أي خدمة، نوضح لك نوع الزيت/القطع والتكلفة المتوقعة،
               وما يتم أي إجراء إضافي إلا بعد موافقتك.
             </p>
@@ -1084,8 +1472,10 @@
 
           <div class="feature">
             <div class="feature-icon">📱</div>
-            <h3 class="feature-title">حجز ومتابعة عبر الواتساب</h3>
-            <p>
+            <h3 class="feature-title" data-i18n="why.feature3Title">
+              حجز ومتابعة عبر الواتساب
+            </h3>
+            <p data-i18n="why.feature3Text">
               تقدر تحجز، وتستفسر، وترسل صور عداد أو تنبيهات الطبلون عبر الواتساب،
               وفريق حركة يرد عليك ويجهّز لك الموعد المناسب.
             </p>
@@ -1094,116 +1484,113 @@
       </div>
     </section>
 
-    <!-- ========== دعوة للحجز ========== -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-box">
-          <div>
-            <h2 class="cta-title">جاهز ترتّب موعد لصيانة سيارتك مع حركة؟</h2>
-            <p class="cta-text">
-              عبّئ نموذج الحجز أو راسلنا مباشرة على الواتساب، وفريق حركة ينظم لك زيارة
-              سريعة بدون انتظار طويل، مع اقتراح أنسب خدمة لحالة سيارتك.
-            </p>
-          </div>
-
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="#booking">حجز موعد الآن</a>
-            <a class="btn btn-outline" href="https://wa.me/WA_NUMBER_HERE" target="_blank">
-              تواصل عبر واتساب
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== نموذج الحجز ========== -->
+    <!-- نموذج الحجز -->
     <section class="form-section" id="booking">
       <div class="container">
         <div class="section-header">
           <div class="section-title-block">
-            <div class="section-kicker">حجز موعد</div>
-            <h2 class="section-title">عبّئ بياناتك وسيتم التواصل معك لتأكيد الحجز</h2>
-            <p class="section-desc">
+            <div class="section-kicker" data-i18n="booking.kicker">حجز موعد</div>
+            <h2 class="section-title" data-i18n="booking.title">
+              عبّئ بياناتك وسيتم التواصل معك لتأكيد الحجز
+            </h2>
+            <p class="section-desc" data-i18n="booking.desc">
               البيانات تساعدنا نجهز الزيت أو الخدمة المناسبة قبل وصولك، وننسق معك الوقت اللي يناسبك.
             </p>
           </div>
         </div>
 
         <div class="form-layout">
-          <!-- نموذج -->
           <div class="form-card">
-            <h3>بيانات الحجز</h3>
-            <p>عبّئ الحقول التالية، وفريق حركة يتواصل معك لتأكيد الموعد والتفاصيل.</p>
+            <h3 data-i18n="booking.formHeading">بيانات الحجز</h3>
+            <p data-i18n="booking.formSubheading">
+              عبّئ الحقول التالية، وفريق حركة يتواصل معك لتأكيد الموعد والتفاصيل.
+            </p>
 
-            <form>
+            <form id="booking-form">
               <div class="form-grid">
                 <div class="form-group">
-                  <label for="name">الاسم الكامل</label>
-                  <input class="form-control" id="name" type="text" placeholder="مثال: أحمد بن علي" required />
+                  <label for="name" data-i18n="booking.nameLabel">الاسم الكامل</label>
+                  <input class="form-control" id="name" name="name" type="text"
+                         data-i18n-placeholder="booking.namePlaceholder" />
                 </div>
 
                 <div class="form-group">
-                  <label for="phone">رقم الجوال</label>
-                  <input class="form-control" id="phone" type="tel" placeholder="05XXXXXXXX" required />
+                  <label for="phone" data-i18n="booking.phoneLabel">رقم الجوال</label>
+                  <input class="form-control" id="phone" name="phone" type="tel"
+                         data-i18n-placeholder="booking.phonePlaceholder" required />
                 </div>
 
                 <div class="form-group">
-                  <label for="car">نوع السيارة</label>
-                  <input class="form-control" id="car" type="text" placeholder="مثال: هيونداي سوناتا 2022" />
+                  <label for="car" data-i18n="booking.carLabel">نوع السيارة</label>
+                  <input class="form-control" id="car" name="car" type="text"
+                         data-i18n-placeholder="booking.carPlaceholder" />
                 </div>
 
                 <div class="form-group">
-                  <label for="service">الخدمة المطلوبة</label>
-                  <select class="form-control" id="service">
-                    <option>اختيار الخدمة</option>
-                    <option>تغيير زيت المحرك</option>
-                    <option>فحص سريع قبل السفر</option>
-                    <option>فحص سيارة قبل الشراء</option>
-                    <option>خدمة أخرى</option>
+                  <label for="service" data-i18n="booking.serviceLabel">الخدمة المطلوبة</label>
+                  <select class="form-control" id="service" name="service">
+                    <option data-i18n="booking.serviceOpt0">اختيار الخدمة</option>
+                    <option data-i18n="booking.serviceOpt1">تغيير زيت المحرك</option>
+                    <option data-i18n="booking.serviceOpt2">فحص سريع قبل السفر</option>
+                    <option data-i18n="booking.serviceOpt3">تغيير وتنظيف فلاتر الهواء والمكيف</option>
+                    <option data-i18n="booking.serviceOpt4">خدمة أخرى</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="time">الوقت المفضّل للزيارة</label>
-                <input class="form-control" id="time" type="text" placeholder="مثال: مساء الخميس / بعد ٦ مساءً" />
+                <label for="time" data-i18n="booking.timeLabel">الوقت المفضّل للزيارة</label>
+                <input class="form-control" id="time" name="time" type="text"
+                       data-i18n-placeholder="booking.timePlaceholder" />
               </div>
 
               <div class="form-group">
-                <label for="notes">ملاحظات إضافية</label>
-                <textarea id="notes" placeholder="اكتب أي ملاحظات عن حالة السيارة أو أصوات/تنبيهات تلاحظها..."></textarea>
+                <label for="notes" data-i18n="booking.notesLabel">ملاحظات إضافية</label>
+                <textarea id="notes" name="notes"
+                          data-i18n-placeholder="booking.notesPlaceholder"></textarea>
               </div>
 
               <div style="margin-top: 0.9rem; display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap;">
-                <button class="btn btn-primary" type="submit">إرسال الطلب</button>
-                <button class="btn btn-outline" type="reset">مسح الحقول</button>
+                <button class="btn btn-primary" type="submit" data-i18n="booking.submitBtn">
+                  إرسال الطلب
+                </button>
+                <button class="btn btn-outline" type="reset" data-i18n="booking.resetBtn">
+                  مسح الحقول
+                </button>
               </div>
 
-              <div class="form-footer-note">
+              <div class="form-footer-note" data-i18n="booking.footerNote">
                 بعد إرسال الطلب، سيقوم فريق حركة بالتواصل معك على الجوال أو الواتساب
                 لتأكيد الموعد والتكلفة التقديرية قبل تنفيذ أي خدمة.
               </div>
+
+              <div id="form-success" class="form-success" style="display:none;"></div>
             </form>
           </div>
 
-          <!-- معلومات جانبية -->
           <aside class="form-side">
-            <div class="form-side-highlight">
+            <div class="form-side-highlight" data-i18n="booking.sideHighlight">
               أفضل وقت للحجز هو قبل زيارتك بوقت كافي، عشان نضمن لك أقل وقت انتظار
               وتجربة سلسة داخل المركز.
             </div>
 
-            <p>
+            <p data-i18n="booking.sideText1">
               بعد استلام طلبك، فريق حركة يتواصل معك خلال أوقات العمل لتأكيد:
             </p>
 
             <ul class="form-side-list">
-              <li>وقت الحضور الأنسب حسب جدولك.</li>
-              <li>نوع الخدمة/الزيت المناسب لسيارتك.</li>
-              <li>أي عروض أو باقات متاحة وقت الحجز.</li>
+              <li data-i18n="booking.sideList1">
+                وقت الحضور الأنسب حسب جدولك.
+              </li>
+              <li data-i18n="booking.sideList2">
+                نوع الخدمة/الزيت المناسب لسيارتك.
+              </li>
+              <li data-i18n="booking.sideList3">
+                أي عروض أو باقات متاحة وقت الحجز.
+              </li>
             </ul>
 
-            <p>
+            <p data-i18n="booking.sideText2">
               تقدر تضيف ملاحظات مثل: "صوت في الفرامل"، "اهتزاز على سرعة معينة"،
               أو صور من عداد الكيلومترات وتنبيهات الطبلون، عشان نساعدك في تشخيص أولي قبل الزيارة.
             </p>
@@ -1211,33 +1598,725 @@
         </div>
       </div>
     </section>
+
+    <!-- خريطة الموقع -->
+    <section id="location" class="map-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-block">
+            <div class="section-kicker" data-i18n="location.kicker">الموقع</div>
+            <h2 class="section-title" data-i18n="location.title">
+              وين تقدر تلقى حركة؟
+            </h2>
+            <p class="section-desc" data-i18n="location.desc">
+              موقع حركة في شرق الرياض بحي الفيحاء، قريب من شوارع رئيسية يسهل الوصول لها
+              سواء من داخل الحي أو من الدائري الشرقي.
+            </p>
+          </div>
+        </div>
+
+        <div class="map-layout">
+          <div class="map-info-card">
+            <h3 class="map-info-title" data-i18n="location.infoTitle">
+              بيانات الموقع
+            </h3>
+            <p class="map-info-text" data-i18n="location.infoText">
+              الرياض – حي الفيحاء، شارع هارون الرشيد، بالقرب من شركة نادك (فرع الفيحاء).
+            </p>
+            <ul class="map-info-list">
+              <li data-i18n="location.list1">
+                المعلم الأقرب: شركة نادك – الفيحاء، حركة تبعد عنها دقائق قليلة مشيًا.
+              </li>
+              <li data-i18n="location.list2">
+                أوقات العمل: الأحد–الخميس من ٩ صباحًا حتى ١٠ مساءً.
+              </li>
+              <li data-i18n="location.list3">
+                الجمعة: من ٤ مساءً حتى ١٠ مساءً.
+              </li>
+              <li data-i18n="location.list4">
+                يفضّل حجز موعد مسبق لتقليل وقت الانتظار.
+              </li>
+            </ul>
+            <p class="map-note" data-i18n="location.note">
+              تقدر تشارك اللوكيشن مباشرة للعائلة أو الأصدقاء، وتستخدم خرائط قوقل للملاحة خطوة بخطوة
+              حتى باب حركة في حي الفيحاء.
+            </p>
+          </div>
+
+          <div class="map-card">
+            <div class="map-tag" data-i18n="location.mapTag">موقع حركة على الخريطة</div>
+            <div class="map-embed">
+              <!-- استبدل YOUR_EMBED_CODE_HERE بكود Google Maps Embed الخاص بموقعك الحقيقي -->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE_HERE"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="map-badge" data-i18n="location.badge">
+              افتح الموقع في Google Maps على جوالك للملاحة مباشرة إلى حركة – حي الفيحاء، شارع هارون الرشيد.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ========== الموقع والفوتر ========== -->
-  <footer id="location">
+  <!-- الفوتر -->
+  <footer>
     <div class="container">
       <div class="footer-row" style="margin-bottom: 0.8rem;">
-        <div>
+        <div data-i18n="footer.copy">
           © <span id="year"></span> حركة – hrkh. جميع الحقوق محفوظة.
         </div>
         <div class="footer-links">
-          <a href="#hero">عن حركة</a>
-          <a href="#services">الخدمات</a>
-          <a href="#booking">حجز موعد</a>
-          <a href="https://wa.me/WA_NUMBER_HERE" target="_blank">تواصل عبر واتساب</a>
+          <a href="#hero" data-i18n="footer.linkAbout">عن حركة</a>
+          <a href="#services" data-i18n="footer.linkServices">الخدمات</a>
+          <a href="#booking" data-i18n="footer.linkBooking">حجز موعد</a>
+          <a href="#location" data-i18n="footer.linkLocation">الموقع</a>
+          <a href="https://wa.me/WA_NUMBER_HERE" target="_blank" data-i18n="footer.linkWhatsapp">
+            تواصل عبر واتساب
+          </a>
         </div>
       </div>
 
-      <div style="font-size: 0.8rem; color: #c7c7c7;">
-        موقعنا: الرياض – حي (اكتب اسم الحي)، شارع (اسم الشارع)، بالقرب من (علامة مميزة).  
+      <div style="font-size: 0.8rem; color: #c7c7c7;" data-i18n="footer.address">
+        موقعنا: الرياض – حي الفيحاء، شارع هارون الرشيد، بالقرب من شركة نادك.
         <br />
         أوقات العمل: من الأحد إلى الخميس – من ٩ صباحًا حتى ١٠ مساءً، والجمعة من ٤ مساءً حتى ١٠ مساءً.
+      </div>
+
+      <!-- هنا التبديل بين الوضع/اللغة -->
+      <div class="footer-switches">
+        <button class="footer-switch" id="theme-toggle">
+          🌙 الوضع الفاتح
+        </button>
+        <button class="footer-switch" id="lang-toggle">
+          English
+        </button>
       </div>
     </div>
   </footer>
 
   <script>
+    // تحديث السنة
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ====== i18n (عربي / إنجليزي بسيط) ======
+    const i18n = {
+      ar: {
+        "nav.subtitle": "مركز صيانة سيارات وخدمات تغيير الزيت",
+        "nav.home": "الرئيسية",
+        "nav.services": "الخدمات",
+        "nav.why": "لماذا حركة؟",
+        "nav.booking": "حجز موعد",
+        "nav.location": "الموقع",
+        "nav.call": "اتصل بنا",
+        "nav.whatsapp": "حجز عبر واتساب",
+
+        "hero.badge": "خدمة سريعة وانت في السيارة",
+        "hero.pill": "تغيير زيت – فلاتر – فحص سريع",
+        "hero.title": "خلّ <span>حركة</span> تهتم بسيارتك وانت مرتاح.",
+        "hero.subtitle":
+          "حركة – hrkh مركز صيانة سيارات يهتم بالخدمات الأساسية اليومية: تغيير الزيت، الفلاتر، الفحص السريع قبل السفر، مع تجربة مرتّبة وواضحة من أول ما توصل إلى ما تستلم سيارتك.",
+        "hero.ctaPrimary": "احجز موعدك الآن",
+        "hero.ctaSecondary": "استعراض خدمات حركة",
+        "hero.note":
+          "بدون انتظار طويل – أغلب خدمات تغيير الزيت تنتهي في أقل من ٣٠ دقيقة حسب حالة السيارة.",
+        "hero.stat1Label": "سيارات خدمناها",
+        "hero.stat1Hint": "منذ انطلاق حركة",
+        "hero.stat2Label": "متوسط زمن الخدمة",
+        "hero.stat2Value": "30 دقيقة",
+        "hero.stat2Hint": "لتغيير الزيت والفحص السريع",
+        "hero.stat3Label": "رضا العملاء",
+        "hero.stat3Hint": "تقييمات عالية واستمرار رجوع العملاء",
+
+        "hero.panelTitle": "لوحة خدمات حركة",
+        "hero.panelTag": "متاح للحجز اليوم",
+        "hero.service1Title": "تغيير زيت المحرك",
+        "hero.service1Sub": "مع فحص مستوى السوائل",
+        "hero.service2Title": "فحص سريع قبل السفر",
+        "hero.service2Sub": "إطارات – فرامل – بطارية",
+        "hero.service3Title": "تغيير فلاتر الهواء والمكيف",
+        "hero.service3Sub": "قطع مناسبة لسيارتك",
+        "hero.offerTitle": "عرض خاص عند الحجز أونلاين",
+        "hero.offerText":
+          "خصم 15٪ على أجرة خدمة تغيير الزيت عند الحجز من الموقع أو الواتساب.",
+        "hero.offerNote": "⏱ عدد محدود من الحجوزات المخفضة لكل يوم.",
+        "hero.ribbon":
+          "احجز وقتك – ادخل على الموعد – خل حركة تهتم بكل تفاصيل سيارتك ✌️",
+
+        "services.kicker": "الخدمات",
+        "services.title": "كل اللي تحتاجه لسيارتك في مكان واحد",
+        "services.desc":
+          "في حركة نهتم بالخدمات الدورية اللي تحافظ على عمر سيارتك وسلامتك على الطريق، مع إمكانية إضافة فحوصات إضافية حسب احتياجك.",
+        "services.link": "احجز خدمة الآن",
+
+        "services.card1Badge": "الأكثر طلبًا",
+        "services.card1Title": "تغيير زيت المحرك والفلاتر",
+        "services.card1Text":
+          "تغيير زيت المحرك بزيوت متوافقة مع مواصفات سيارتك، مع تغيير فلتر الزيت، وفحص سريع لمستوى السوائل وتنبيهات الطبلون قبل تسليم السيارة.",
+        "services.card1Meta1": "المدة التقريبية: 30 دقيقة",
+        "services.card1Meta2": "يشمل: زيت + فلتر",
+        "services.card1FooterText": "إمكانية تذكيرك بمواعيد التغيير القادمة",
+        "services.card1FooterBtn": "احجز تغيير زيت",
+
+        "services.card2Badge": "صيانة سريعة",
+        "services.card2Title": "فحص سريع قبل السفر",
+        "services.card2Text":
+          "مراجعة نقاط السلامة الأساسية: هواء الإطارات، الفرامل، الزيوت، الأنوار، والبطارية، عشان تسافر وانت مطمّن أن سيارتك جاهزة للمشوار.",
+        "services.card2Meta1": "المدة: 40 دقيقة",
+        "services.card2Meta2": "تقرير مختصر للحالة",
+        "services.card2FooterText":
+          "يناسب الرحلات الطويلة والطرق السريعة",
+        "services.card2FooterBtn": "احجز فحص سفر",
+
+        "services.card3Badge": "هواء ومكيف",
+        "services.card3Title": "تغيير وتنظيف فلاتر الهواء والمكيف",
+        "services.card3Text":
+          "خدمة تهتم بتنفس سيارتك داخليًا وخارجيًا: تغيير فلتر هواء المحرك وفلتر المكيف (حسب حالة القطع)، مع تنظيف مجرى هواء المكيف لتحسين برودة الهواء وتقليل الروائح.",
+        "services.card3Meta1": "المدة التقريبية: 45 دقيقة",
+        "services.card3Meta2":
+          "يشمل: فلتر واحد أو أكثر حسب الاتفاق",
+        "services.card3FooterText":
+          "يحسّن عزم السيارة وجودة هواء المقصورة",
+        "services.card3FooterBtn": "احجز خدمة الفلاتر",
+
+        "promo.kicker": "عروض حركة",
+        "promo.title": "بنرات دعائية لخدمات أساسية",
+        "promo.desc":
+          "تقدر تستخدم هذي العروض في الموقع والحملات الرقمية لإبراز أهم خدمات حركة لعملائك.",
+        "promo.banner1Tag": "تغيير الزيت",
+        "promo.banner1Title": "باقة تغيير الزيت مع فحص 20 نقطة",
+        "promo.banner1Text":
+          "زيت مناسب لمواصفات سيارتك + فلتر زيت معتمد، مع فحص سريع لـ 20 نقطة أساسية في السيارة يشمل الإطارات، مستوى السوائل، البطارية، والأنوار قبل تسليم السيارة.",
+        "promo.banner1Badge":
+          "💰 سعر الباقة يبدأ من 149 ريال شامل الضريبة – يختلف حسب نوع السيارة والزيت.",
+        "promo.banner2Tag": "قبل السفر",
+        "promo.banner2Title": "فحص طريق قبل السفر بسعر ثابت 129 ريال",
+        "promo.banner2Text":
+          "فحص شامل لنقاط السلامة قبل السفر: ضغط الإطارات، حالة الفرامل، البطارية، الزيوت الأساسية، والأنوار الأمامية والخلفية، مع تقرير مختصر يوضح حالة سيارتك.",
+        "promo.banner2Badge":
+          "🚗 مثالي للرحلات التي تتجاوز 300 كم داخل وخارج مدينة الرياض.",
+        "promo.banner3Tag": "عملاء جدد",
+        "promo.banner3Title":
+          "خصم 15٪ لأول زيارة على خدمة تغيير الزيت",
+        "promo.banner3Text":
+          "أول مرة تزور حركة؟ احصل على خصم 15٪ على أجرة خدمة تغيير الزيت عند الحجز المسبق من الموقع أو الواتساب باستخدام كود HRKH15.",
+        "promo.banner3Badge":
+          "*الخصم يطبق على أجرة الخدمة فقط، ولا يشمل قيمة الزيت أو القطع الإضافية.",
+
+        "why.kicker": "ليش حركة؟",
+        "why.title": "تجربة صيانة واضحة ومريحة",
+        "why.desc":
+          "حركة مبنية على فكرة أن صيانة السيارة ما لازم تكون تجربة متعبة. وضوح في الخدمة، شفافية في الأسعار، وتجربة مرتبة من أول اتصال إلى آخر خطوة.",
+        "why.feature1Title": "فنيين خبرة وتجهيزات حديثة",
+        "why.feature1Text":
+          "فريق حركة مدرّب على التعامل مع أغلب أنواع السيارات، باستخدام أدوات حديثة تساعد في تقديم خدمة أدق وأسرع.",
+        "why.feature2Title": "شفافية في الخدمة والتسعير",
+        "why.feature2Text":
+          "قبل نبدأ أي خدمة، نوضح لك نوع الزيت/القطع والتكلفة المتوقعة، وما يتم أي إجراء إضافي إلا بعد موافقتك.",
+        "why.feature3Title": "حجز ومتابعة عبر الواتساب",
+        "why.feature3Text":
+          "تقدر تحجز، وتستفسر، وترسل صور عداد أو تنبيهات الطبلون عبر الواتساب، وفريق حركة يرد عليك ويجهّز لك الموعد المناسب.",
+
+        "booking.kicker": "حجز موعد",
+        "booking.title": "عبّئ بياناتك وسيتم التواصل معك لتأكيد الحجز",
+        "booking.desc":
+          "البيانات تساعدنا نجهز الزيت أو الخدمة المناسبة قبل وصولك، وننسق معك الوقت اللي يناسبك.",
+        "booking.formHeading": "بيانات الحجز",
+        "booking.formSubheading":
+          "عبّئ الحقول التالية، وفريق حركة يتواصل معك لتأكيد الموعد والتفاصيل.",
+        "booking.nameLabel": "الاسم الكامل",
+        "booking.phoneLabel": "رقم الجوال",
+        "booking.carLabel": "نوع السيارة",
+        "booking.serviceLabel": "الخدمة المطلوبة",
+        "booking.serviceOpt0": "اختيار الخدمة",
+        "booking.serviceOpt1": "تغيير زيت المحرك",
+        "booking.serviceOpt2": "فحص سريع قبل السفر",
+        "booking.serviceOpt3": "تغيير وتنظيف فلاتر الهواء والمكيف",
+        "booking.serviceOpt4": "خدمة أخرى",
+        "booking.timeLabel": "الوقت المفضّل للزيارة",
+        "booking.notesLabel": "ملاحظات إضافية",
+        "booking.submitBtn": "إرسال الطلب",
+        "booking.resetBtn": "مسح الحقول",
+        "booking.footerNote":
+          "بعد إرسال الطلب، سيقوم فريق حركة بالتواصل معك على الجوال أو الواتساب لتأكيد الموعد والتكلفة التقديرية قبل تنفيذ أي خدمة.",
+        "booking.sideHighlight":
+          "أفضل وقت للحجز هو قبل زيارتك بوقت كافي، عشان نضمن لك أقل وقت انتظار وتجربة سلسة داخل المركز.",
+        "booking.sideText1":
+          "بعد استلام طلبك، فريق حركة يتواصل معك خلال أوقات العمل لتأكيد:",
+        "booking.sideList1": "وقت الحضور الأنسب حسب جدولك.",
+        "booking.sideList2": "نوع الخدمة/الزيت المناسب لسيارتك.",
+        "booking.sideList3": "أي عروض أو باقات متاحة وقت الحجز.",
+        "booking.sideText2":
+          "تقدر تضيف ملاحظات مثل: \"صوت في الفرامل\"، \"اهتزاز على سرعة معينة\"، أو صور من عداد الكيلومترات وتنبيهات الطبلون، عشان نساعدك في تشخيص أولي قبل الزيارة.",
+        "booking.namePlaceholder": "مثال: أحمد بن علي",
+        "booking.phonePlaceholder": "05XXXXXXXX",
+        "booking.carPlaceholder": "مثال: هيونداي سوناتا 2022",
+        "booking.timePlaceholder": "مثال: مساء الخميس / بعد ٦ مساءً",
+        "booking.notesPlaceholder":
+          "اكتب أي ملاحظات عن حالة السيارة أو أصوات/تنبيهات تلاحظها...",
+
+        "location.kicker": "الموقع",
+        "location.title": "وين تقدر تلقى حركة؟",
+        "location.desc":
+          "موقع حركة في شرق الرياض بحي الفيحاء، قريب من شوارع رئيسية يسهل الوصول لها سواء من داخل الحي أو من الدائري الشرقي.",
+        "location.infoTitle": "بيانات الموقع",
+        "location.infoText":
+          "الرياض – حي الفيحاء، شارع هارون الرشيد، بالقرب من شركة نادك (فرع الفيحاء).",
+        "location.list1":
+          "المعلم الأقرب: شركة نادك – الفيحاء، حركة تبعد عنها دقائق قليلة مشيًا.",
+        "location.list2":
+          "أوقات العمل: الأحد–الخميس من ٩ صباحًا حتى ١٠ مساءً.",
+        "location.list3": "الجمعة: من ٤ مساءً حتى ١٠ مساءً.",
+        "location.list4": "يفضّل حجز موعد مسبق لتقليل وقت الانتظار.",
+        "location.note":
+          "تقدر تشارك اللوكيشن مباشرة للعائلة أو الأصدقاء، وتستخدم خرائط قوقل للملاحة خطوة بخطوة حتى باب حركة في حي الفيحاء.",
+        "location.mapTag": "موقع حركة على الخريطة",
+        "location.badge":
+          "افتح الموقع في Google Maps على جوالك للملاحة مباشرة إلى حركة – حي الفيحاء، شارع هارون الرشيد.",
+
+        "footer.copy":
+          "© حركة – hrkh. جميع الحقوق محفوظة.",
+        "footer.linkAbout": "عن حركة",
+        "footer.linkServices": "الخدمات",
+        "footer.linkBooking": "حجز موعد",
+        "footer.linkLocation": "الموقع",
+        "footer.linkWhatsapp": "تواصل عبر واتساب",
+        "footer.address":
+          "موقعنا: الرياض – حي الفيحاء، شارع هارون الرشيد، بالقرب من شركة نادك.\nأوقات العمل: من الأحد إلى الخميس – من ٩ صباحًا حتى ١٠ مساءً، والجمعة من ٤ مساءً حتى ١٠ مساءً."
+      },
+
+      en: {
+        "nav.subtitle": "Car maintenance & oil change center",
+        "nav.home": "Home",
+        "nav.services": "Services",
+        "nav.why": "Why hrkh?",
+        "nav.booking": "Book an appointment",
+        "nav.location": "Location",
+        "nav.call": "Call us",
+        "nav.whatsapp": "Book via WhatsApp",
+
+        "hero.badge": "Quick service while you stay in your car",
+        "hero.pill": "Oil change – filters – quick check",
+        "hero.title":
+          "Let <span>hrkh</span> take care of your car while you relax.",
+        "hero.subtitle":
+          "hrkh is a car maintenance center focused on your daily essentials: engine oil change, filters, and quick pre-trip checks — with a clear and smooth experience from arrival to handover.",
+        "hero.ctaPrimary": "Book your slot now",
+        "hero.ctaSecondary": "View hrkh services",
+        "hero.note":
+          "No long waiting time – most oil change services are completed in under 30 minutes depending on your car.",
+        "hero.stat1Label": "Cars serviced",
+        "hero.stat1Hint": "Since hrkh started",
+        "hero.stat2Label": "Average service time",
+        "hero.stat2Value": "30 min",
+        "hero.stat2Hint": "For oil change & quick check",
+        "hero.stat3Label": "Customer rating",
+        "hero.stat3Hint": "High ratings and repeat customers",
+
+        "hero.panelTitle": "hrkh services board",
+        "hero.panelTag": "Available to book today",
+        "hero.service1Title": "Engine oil change",
+        "hero.service1Sub": "With fluid level check",
+        "hero.service2Title": "Quick pre-trip check",
+        "hero.service2Sub": "Tires – brakes – battery",
+        "hero.service3Title": "Air & A/C filter service",
+        "hero.service3Sub": "Parts matched to your car",
+        "hero.offerTitle": "Online booking offer",
+        "hero.offerText":
+          "Get 15% off service fees for engine oil change when you book via website or WhatsApp.",
+        "hero.offerNote":
+          "⏱ Limited discounted slots available per day.",
+        "hero.ribbon":
+          "Pick your time, arrive on schedule, and let hrkh handle every detail of your car ✌️",
+
+        "services.kicker": "Services",
+        "services.title": "Everything your car needs in one place",
+        "services.desc":
+          "At hrkh we focus on periodic services that extend your car’s life and keep you safe on the road, with optional extra checks when needed.",
+        "services.link": "Book a service",
+
+        "services.card1Badge": "Most popular",
+        "services.card1Title": "Engine oil & filter change",
+        "services.card1Text":
+          "Oil that matches your car’s specs, new oil filter, plus a quick check for fluid levels and warning lights before handing back the car.",
+        "services.card1Meta1": "Approx. duration: 30 minutes",
+        "services.card1Meta2": "Includes: oil + filter",
+        "services.card1FooterText":
+          "We can remind you of your next oil change",
+        "services.card1FooterBtn": "Book oil change",
+
+        "services.card2Badge": "Quick care",
+        "services.card2Title": "Pre-trip quick check",
+        "services.card2Text":
+          "Check key safety points: tire pressure, brakes, oils, lights and battery — so you can travel knowing your car is ready for the road.",
+        "services.card2Meta1": "Duration: 40 minutes",
+        "services.card2Meta2": "Short condition report",
+        "services.card2FooterText":
+          "Perfect for long highway trips",
+        "services.card2FooterBtn": "Book trip check",
+
+        "services.card3Badge": "Air & A/C",
+        "services.card3Title": "Air and A/C filter service",
+        "services.card3Text":
+          "We refresh your car’s breathing inside and out: engine air filter and cabin filter (depending on condition), plus cleaning A/C air ducts to improve cooling and reduce odors.",
+        "services.card3Meta1": "Approx. duration: 45 minutes",
+        "services.card3Meta2":
+          "Includes one or more filters as agreed",
+        "services.card3FooterText":
+          "Improves engine response and cabin air quality",
+        "services.card3FooterBtn": "Book filter service",
+
+        "promo.kicker": "hrkh offers",
+        "promo.title": "Promo banners for key services",
+        "promo.desc":
+          "Use these offers on your website and campaigns to highlight hrkh’s main services.",
+        "promo.banner1Tag": "Oil change",
+        "promo.banner1Title": "Oil change bundle with 20-point check",
+        "promo.banner1Text":
+          "Oil that matches the manufacturer specs + approved oil filter, plus a quick 20-point check covering tires, fluid levels, battery and lights before delivery.",
+        "promo.banner1Badge":
+          "💰 Bundle price starts from SAR 149 (VAT included) — varies by car and oil type.",
+        "promo.banner2Tag": "Before you travel",
+        "promo.banner2Title": "Pre-trip road check for SAR 129",
+        "promo.banner2Text":
+          "Comprehensive safety check before your trip: tire pressure, brake condition, battery, main oils and front/rear lights, with a short summary report.",
+        "promo.banner2Badge":
+          "🚗 Ideal for trips longer than 300 km in and around Riyadh.",
+        "promo.banner3Tag": "New customers",
+        "promo.banner3Title":
+          "15% off your first visit on oil change service",
+        "promo.banner3Text":
+          "First time at hrkh? Enjoy 15% off service fees for engine oil change when you book in advance via website or WhatsApp using code HRKH15.",
+        "promo.banner3Badge":
+          "*Discount applies to service fees only, not to oil or spare parts.",
+
+        "why.kicker": "Why hrkh?",
+        "why.title": "A clear and comfortable maintenance experience",
+        "why.desc":
+          "hrkh was built on the idea that car maintenance shouldn’t be painful. Clear services, transparent pricing, and an organized journey from first contact to final handover.",
+        "why.feature1Title": "Experienced technicians & modern tools",
+        "why.feature1Text":
+          "Our team is trained to handle most car brands using modern tools that help us provide faster and more accurate service.",
+        "why.feature2Title": "Transparency in service and pricing",
+        "why.feature2Text":
+          "Before we start, we explain the oil/parts to be used and the expected cost — nothing extra is done without your approval.",
+        "why.feature3Title": "Booking and follow-up via WhatsApp",
+        "why.feature3Text":
+          "You can book, ask questions, and send pictures of your odometer or warning lights via WhatsApp, and the hrkh team will prepare the right time and service.",
+
+        "booking.kicker": "Booking",
+        "booking.title": "Fill your details and we’ll confirm your appointment",
+        "booking.desc":
+          "Your information helps us prepare the right oil or service before you arrive and coordinate the time that suits you.",
+        "booking.formHeading": "Booking details",
+        "booking.formSubheading":
+          "Fill in the fields below and the hrkh team will contact you to confirm your time and service.",
+        "booking.nameLabel": "Full name",
+        "booking.phoneLabel": "Mobile number",
+        "booking.carLabel": "Car make & model",
+        "booking.serviceLabel": "Requested service",
+        "booking.serviceOpt0": "Choose a service",
+        "booking.serviceOpt1": "Engine oil change",
+        "booking.serviceOpt2": "Quick pre-trip check",
+        "booking.serviceOpt3": "Air and A/C filter service",
+        "booking.serviceOpt4": "Other service",
+        "booking.timeLabel": "Preferred visit time",
+        "booking.notesLabel": "Additional notes",
+        "booking.submitBtn": "Submit request",
+        "booking.resetBtn": "Clear fields",
+        "booking.footerNote":
+          "After submitting, the hrkh team will contact you via phone or WhatsApp to confirm the time and estimated cost before any work is done.",
+        "booking.sideHighlight":
+          "Booking ahead of time helps us reduce your waiting time and keep your visit smooth.",
+        "booking.sideText1":
+          "After receiving your request, we’ll contact you during working hours to confirm:",
+        "booking.sideList1": "The visit time that best fits your schedule.",
+        "booking.sideList2": "The right service/oil type for your car.",
+        "booking.sideList3": "Any available offers or bundles at your time.",
+        "booking.sideText2":
+          "You can add notes like brake noises, vibrations at certain speeds, or photos of your odometer and warning lights to help us with a quick initial assessment.",
+        "booking.namePlaceholder": "Example: Ahmed Ali",
+        "booking.phonePlaceholder": "05XXXXXXXX",
+        "booking.carPlaceholder": "Example: Hyundai Sonata 2022",
+        "booking.timePlaceholder": "Example: Thursday evening / after 6 PM",
+        "booking.notesPlaceholder":
+          "Add any notes about the car condition, sounds, or warning lights…",
+
+        "location.kicker": "Location",
+        "location.title": "Where can you find hrkh?",
+        "location.desc":
+          "hrkh is located in east Riyadh in Al-Fayha district, close to main roads that are easy to reach from inside the neighborhood or from the Eastern Ring Road.",
+        "location.infoTitle": "Location details",
+        "location.infoText":
+          "Riyadh – Al-Fayha district, Haroun Al Rasheed Street, near Nadec (Al-Fayha branch).",
+        "location.list1":
+          "Nearest landmark: Nadec – Al-Fayha; hrkh is only a few minutes’ walk away.",
+        "location.list2":
+          "Working hours: Sunday–Thursday from 9:00 AM to 10:00 PM.",
+        "location.list3": "Friday: from 4:00 PM to 10:00 PM.",
+        "location.list4":
+          "We recommend booking in advance to reduce waiting time.",
+        "location.note":
+          "You can share the location with family and friends and use Google Maps navigation step-by-step straight to hrkh in Al-Fayha.",
+        "location.mapTag": "hrkh on the map",
+        "location.badge":
+          "Open in Google Maps on your phone to navigate directly to hrkh – Al-Fayha, Haroun Al Rasheed Street.",
+
+        "footer.copy":
+          "© hrkh. All rights reserved.",
+        "footer.linkAbout": "About hrkh",
+        "footer.linkServices": "Services",
+        "footer.linkBooking": "Book",
+        "footer.linkLocation": "Location",
+        "footer.linkWhatsapp": "Contact via WhatsApp",
+        "footer.address":
+          "Location: Riyadh – Al-Fayha district, Haroun Al Rasheed Street, near Nadec.\nWorking hours: Sunday–Thursday 9:00 AM – 10:00 PM, Friday 4:00 PM – 10:00 PM."
+      }
+    };
+
+    let currentLang = "ar";
+    let currentTheme = "dark";
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      const root = document.documentElement;
+      root.lang = lang;
+      root.dir = lang === "ar" ? "rtl" : "ltr";
+
+      // نصوص عادية
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        const value = i18n[lang][key];
+        if (value !== undefined) {
+          if (value.includes("\n")) {
+            el.innerText = value;
+          } else {
+            el.textContent = value;
+          }
+        }
+      });
+
+      // نصوص تحتوي HTML
+      document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-html");
+        const value = i18n[lang][key];
+        if (value !== undefined) {
+          el.innerHTML = value;
+        }
+      });
+
+      // Placeholders للنماذج
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        const value = i18n[lang][key];
+        if (value !== undefined) {
+          el.setAttribute("placeholder", value);
+        }
+      });
+
+      updateFooterButtons();
+    }
+
+    function applyTheme(theme) {
+      currentTheme = theme;
+      document.body.classList.toggle("light-theme", theme === "light");
+      document.body.classList.toggle("dark-theme", theme === "dark");
+      updateFooterButtons();
+    }
+
+    function updateFooterButtons() {
+      const themeBtn = document.getElementById("theme-toggle");
+      const langBtn = document.getElementById("lang-toggle");
+
+      if (themeBtn) {
+        if (currentLang === "ar") {
+          themeBtn.textContent = currentTheme === "dark" ? "🌙 الوضع الفاتح" : "🌑 الوضع الداكن";
+        } else {
+          themeBtn.textContent = currentTheme === "dark" ? "🌙 Light mode" : "🌑 Dark mode";
+        }
+      }
+
+      if (langBtn) {
+        langBtn.textContent = currentLang === "ar" ? "English" : "العربية";
+      }
+    }
+
+    // أزرار الفوتر
+    const themeToggle = document.getElementById("theme-toggle");
+    const langToggle = document.getElementById("lang-toggle");
+
+    if (themeToggle) {
+      themeToggle.addEventListener("click", () => {
+        applyTheme(currentTheme === "dark" ? "light" : "dark");
+      });
+    }
+
+    if (langToggle) {
+      langToggle.addEventListener("click", () => {
+        applyLanguage(currentLang === "ar" ? "en" : "ar");
+      });
+    }
+
+    // تطبيق الإعدادات الافتراضية
+    applyLanguage("ar");
+    applyTheme("dark");
+
+    // ====== ربط نموذج الحجز مع Google Sheets + ملف التقويم ======
+    const SHEETS_WEB_APP_URL =
+      "https://script.google.com/macros/s/AKfycbxNqdilgb5SKhdt2ac7s4Up7L2hpvljoQKSnEb3Y_f7SUeqwCahVs7SIryHQ-ja4-v1uw/exec";
+
+    const form = document.getElementById("booking-form");
+    const successBox = document.getElementById("form-success");
+
+    let lastBooking = null;
+
+    function saveBookingToLocalStorage(booking) {
+      const key = "hrkhBookings";
+      const existing = localStorage.getItem(key);
+      let rows = [];
+
+      if (existing) {
+        try {
+          rows = JSON.parse(existing);
+        } catch {
+          rows = [];
+        }
+      }
+
+      rows.push(booking);
+      localStorage.setItem(key, JSON.stringify(rows));
+    }
+
+    async function sendBookingToGoogleSheets(booking) {
+      try {
+        await fetch(SHEETS_WEB_APP_URL, {
+          method: "POST",
+          mode: "no-cors",
+          body: JSON.stringify(booking),
+        });
+      } catch (err) {
+        console.error("خطأ في الإرسال إلى Google Sheets:", err);
+      }
+    }
+
+    function addBookingToCalendar(booking) {
+      const now = new Date();
+      const pad = (n) => String(n).padStart(2, "0");
+
+      const y = now.getFullYear();
+      const m = pad(now.getMonth() + 1);
+      const d = pad(now.getDate());
+      const hh = pad(now.getHours());
+      const mm = pad(now.getMinutes());
+      const ss = pad(now.getSeconds());
+
+      const dtStamp = `${y}${m}${d}T${hh}${mm}${ss}Z`;
+      const dtStart = `${y}${m}${d}`; // حدث يوم كامل
+
+      const summary =
+        (currentLang === "ar"
+          ? `حجز موعد صيانة – حركة (${booking.name || "عميل"})`
+          : `hrkh service booking (${booking.name || "Customer"})`);
+
+      const descriptionLines = [
+        (currentLang === "ar" ? "الاسم: " : "Name: ") + (booking.name || ""),
+        (currentLang === "ar" ? "رقم الجوال: " : "Phone: ") +
+          (booking.phone || ""),
+        (currentLang === "ar" ? "نوع السيارة: " : "Car: ") +
+          (booking.car || ""),
+        (currentLang === "ar" ? "الخدمة المطلوبة: " : "Service: ") +
+          (booking.service || ""),
+        (currentLang === "ar"
+          ? "الوقت المفضّل الذي اخترته: "
+          : "Preferred time: ") + (booking.time || ""),
+        (currentLang === "ar"
+          ? "ملاحظات إضافية: "
+          : "Additional notes: ") + (booking.notes || ""),
+      ];
+
+      const description = descriptionLines.join("\\n");
+
+      const icsContent = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//hrkh//booking//AR",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH",
+        "BEGIN:VEVENT",
+        `UID:hrkh-${Date.now()}@hrkh`,
+        `DTSTAMP:${dtStamp}`,
+        `DTSTART;VALUE=DATE:${dtStart}`,
+        `SUMMARY:${summary}`,
+        `DESCRIPTION:${description}`,
+        "END:VEVENT",
+        "END:VCALENDAR",
+      ].join("\r\n");
+
+      const blob = new Blob([icsContent], {
+        type: "text/calendar;charset=utf-8;",
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "hrkh_booking.ics";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        const booking = {
+          name: form.name.value.trim(),
+          phone: form.phone.value.trim(),
+          car: form.car.value.trim(),
+          service: form.service.value,
+          time: form.time.value.trim(),
+          notes: form.notes.value.trim(),
+          createdAt: new Date().toISOString(),
+          userAgent: navigator.userAgent,
+        };
+
+        lastBooking = booking;
+
+        saveBookingToLocalStorage(booking);
+        sendBookingToGoogleSheets(booking);
+
+        successBox.style.display = "block";
+        successBox.innerHTML =
+          (currentLang === "ar"
+            ? "✅ تم استلام طلب الحجز بنجاح. سيقوم فريق حركة بالتواصل معك لتأكيد الموعد."
+            : "✅ Your booking request has been received. The hrkh team will contact you to confirm your appointment.") +
+          ' <button type="button" id="add-calendar-btn">' +
+          (currentLang === "ar"
+            ? "إضافة الموعد للتقويم"
+            : "Add to calendar") +
+          "</button>";
+
+        const calendarBtn = document.getElementById("add-calendar-btn");
+        if (calendarBtn) {
+          calendarBtn.addEventListener("click", () => {
+            if (lastBooking) addBookingToCalendar(lastBooking);
+          });
+        }
+
+        form.reset();
+        // إعادة تطبيق الـ placeholders بعد reset
+        applyLanguage(currentLang);
+      });
+    }
   </script>
 </body>
 </html>
