@@ -789,7 +789,7 @@
       color: #f9f9f9;
       font-size: 0.8rem;
       outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      transition: border-color 0.2s.ease, box-shadow 0.2s.ease;
     }
 
     textarea {
@@ -872,7 +872,7 @@
     .footer-row {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space_between;
       gap: 1rem;
       font-size: 0.78rem;
       color: #a3a3a3;
@@ -982,7 +982,7 @@
       }
 
       .hero-title {
-        font-size: 1.9rem;
+        font_size: 1.9rem;
       }
     }
 
@@ -1604,16 +1604,9 @@
                   <label for="carYear" data-i18n="booking.carYearLabel">سنة الموديل</label>
                   <select class="form-control" id="carYear" name="carYear">
                     <option value="" selected disabled data-i18n="booking.carYearOpt0">اختر سنة الموديل</option>
-                    <!-- سنوات سيتم توليدها بالجافاسكربت -->
+                    <!-- سنوات يتم توليدها بالجافاسكربت -->
                   </select>
                 </div>
-              </div>
-
-              <!-- موديل السيارة (نص) -->
-              <div class="form-group">
-                <label for="carModel" data-i18n="booking.carModelLabel">موديل السيارة</label>
-                <input class="form-control" id="carModel" name="carModel" type="text"
-                       data-i18n-placeholder="booking.carPlaceholder" />
               </div>
 
               <!-- التاريخ والوقت -->
@@ -1945,7 +1938,6 @@
         "booking.phoneLabel": "رقم الجوال",
         "booking.carLabel": "ماركة السيارة",
         "booking.carBrandOpt0": "اختر الماركة",
-        "booking.carModelLabel": "موديل السيارة",
         "booking.carYearLabel": "سنة الموديل",
         "booking.carYearOpt0": "اختر سنة الموديل",
         "booking.serviceLabel": "الخدمة المطلوبة",
@@ -1972,7 +1964,6 @@
           "تقدر تضيف ملاحظات مثل: \"صوت في الفرامل\"، \"اهتزاز على سرعة معينة\"، أو صور من عداد الكيلومترات وتنبيهات الطبلون، عشان نساعدك في تشخيص أولي قبل الزيارة.",
         "booking.namePlaceholder": "مثال: أحمد بن علي",
         "booking.phonePlaceholder": "05XXXXXXXX",
-        "booking.carPlaceholder": "مثال: سوناتا / كامري / إلنترا",
         "booking.datePlaceholder": "",
         "booking.timePlaceholder": "",
         "booking.notesPlaceholder":
@@ -2138,7 +2129,6 @@
         "booking.phoneLabel": "Mobile number",
         "booking.carLabel": "Car brand",
         "booking.carBrandOpt0": "Select brand",
-        "booking.carModelLabel": "Car model",
         "booking.carYearLabel": "Model year",
         "booking.carYearOpt0": "Select model year",
         "booking.serviceLabel": "Requested service",
@@ -2165,7 +2155,6 @@
           "You can add notes like brake noises, vibrations at certain speeds, or photos of your odometer and warning lights to help us with a quick initial assessment.",
         "booking.namePlaceholder": "Example: Ahmed Ali",
         "booking.phonePlaceholder": "05XXXXXXXX",
-        "booking.carPlaceholder": "Example: Sonata / Camry / Elantra",
         "booking.datePlaceholder": "",
         "booking.timePlaceholder": "",
         "booking.notesPlaceholder":
@@ -2342,7 +2331,7 @@
           ? `حجز موعد صيانة – حركة (${booking.name || "عميل"})`
           : `hrkh service booking (${booking.name || "Customer"})`);
 
-      const carInfo = [booking.carBrand, booking.carModel, booking.carYear]
+      const carInfo = [booking.carBrand, booking.carYear]
         .filter(Boolean)
         .join(" – ");
 
@@ -2410,7 +2399,7 @@
           name: form.name.value.trim(),
           phone: form.phone.value.trim(),
           carBrand: form.carBrand.value,
-          carModel: form.carModel.value.trim(),
+          carModel: "", // تم إلغاء حقل الموديل النصي
           carYear: form.carYear.value,
           service: form.service.value,
           date: form.visitDate.value,
