@@ -61,6 +61,10 @@
       padding: 0 1.5rem;
     }
 
+    .is-hidden {
+      display: none !important;
+    }
+
     /* ========== الهيدر ========== */
     header {
       position: sticky;
@@ -489,6 +493,28 @@
       gap: 0.6rem;
     }
 
+    .card-image {
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 0.6rem;
+      background: #1b1b1b;
+      height: 180px;        /* ✅ توحيد ارتفاع الصور */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: #777;
+      text-align: center;
+      padding: 0;           /* ✅ بدون حواف داخلية عشان الصورة تملي الكرت */
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;   /* ✅ نفس المقاس بدون تشويه */
+      display: block;
+    }
+
     .card-badge {
       font-size: 0.72rem;
       padding: 0.18rem 0.6rem;
@@ -515,6 +541,8 @@
       font-size: 0.78rem;
       margin-top: 0.3rem;
       color: #b0b0b0;
+      gap: 0.5rem;
+      flex-wrap: wrap;
     }
 
     .card-meta span strong {
@@ -528,6 +556,8 @@
       margin-top: 0.7rem;
       font-size: 0.78rem;
       color: var(--color-accent);
+      gap: 0.5rem;
+      flex-wrap: wrap;
     }
 
     .card-footer button {
@@ -602,7 +632,7 @@
       background: linear-gradient(135deg, #5054a0, #111111);
     }
 
-    /* ========== لماذا حركة؟ ========== */
+    /* ========== لماذا حركة؟ (مخفي عبر is-hidden) ========== */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -732,7 +762,7 @@
       color: #c7c7c7;
     }
 
-    /* ========== نموذج الحجز ========== */
+    /* ========== نموذج الحجز (مخفي عبر is-hidden) ========== */
     .form-section {
       padding: 0 0 3rem;
     }
@@ -789,7 +819,7 @@
       color: #f9f9f9;
       font-size: 0.8rem;
       outline: none;
-      transition: border-color 0.2s.ease, box-shadow 0.2s.ease;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     textarea {
@@ -872,7 +902,7 @@
     .footer-row {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space_between;
+      justify-content: space-between;
       gap: 1rem;
       font-size: 0.78rem;
       color: #a3a3a3;
@@ -982,7 +1012,7 @@
       }
 
       .hero-title {
-        font_size: 1.9rem;
+        font-size: 1.9rem;
       }
     }
 
@@ -1011,7 +1041,7 @@
     }
 
     body.light-theme .nav-title-sub {
-      color: #8a8a8a;
+      color: #8a8aa8;
     }
 
     body.light-theme .card,
@@ -1022,6 +1052,11 @@
       background: #ffffff;
       border-color: #e1e1ee;
       box-shadow: 0 10px 22px rgba(15, 15, 35, 0.06);
+    }
+
+    body.light-theme .card-image {
+      background: #f3f3ff;
+      color: #888;
     }
 
     body.light-theme .hero-panel {
@@ -1128,7 +1163,6 @@
       color: #333333;
       border-color: #cccccc;
     }
-
   </style>
 </head>
 
@@ -1156,16 +1190,23 @@
         <div class="nav-links">
           <a href="#hero" data-i18n="nav.home">الرئيسية</a>
           <a href="#services" data-i18n="nav.services">الخدمات</a>
-          <a href="#why-us" data-i18n="nav.why">لماذا حركة؟</a>
+          <a href="#extra-services">الخدمات الإضافية</a>
           <a href="#booking" data-i18n="nav.booking">حجز موعد</a>
           <a href="#location" data-i18n="nav.location">الموقع</a>
         </div>
 
         <div class="nav-cta">
-          <a class="btn btn-outline" href="tel:05XXXXXXXX" data-i18n="nav.call">
+          <a class="btn btn-outline" href="tel:0558038843" data-i18n="nav.call">
             اتصل بنا
           </a>
-          <a class="btn btn-primary" href="https://wa.me/WA_NUMBER_HERE" target="_blank" data-i18n="nav.whatsapp">
+          <a
+            class="btn btn-primary"
+            id="whatsapp-nav"
+            href="https://wa.me/966558038843"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="nav.whatsapp"
+          >
             حجز عبر واتساب
           </a>
         </div>
@@ -1284,7 +1325,7 @@
       </div>
     </section>
 
-    <!-- الخدمات -->
+    <!-- الخدمات الأساسية -->
     <section id="services">
       <div class="container">
         <div class="section-header">
@@ -1305,7 +1346,11 @@
         </div>
 
         <div class="cards-grid">
+          <!-- كرت: تغيير زيت المحرك -->
           <article class="card">
+            <div class="card-image">
+              <img src="https://i.ibb.co/gMPKk8rG/Gemini-Generated-Image-q91415q91415q914.png" alt="تغيير زيت المحرك" />
+            </div>
             <span class="card-badge" data-i18n="services.card1Badge">الأكثر طلبًا</span>
             <h3 class="card-title" data-i18n="services.card1Title">
               تغيير زيت المحرك والفلاتر
@@ -1322,13 +1367,23 @@
               <span data-i18n="services.card1FooterText">
                 إمكانية تذكيرك بمواعيد التغيير القادمة
               </span>
-              <a href="#booking">
-                <button data-i18n="services.card1FooterBtn">احجز تغيير زيت</button>
-              </a>
+              <!-- ✅ واتساب خاص بتغيير الزيت -->
+              <button
+                type="button"
+                class="whatsapp-book"
+                data-service="oil-change"
+                data-i18n="services.card1FooterBtn"
+              >
+                احجز تغيير زيت
+              </button>
             </div>
           </article>
 
+          <!-- كرت: فحص سريع قبل السفر -->
           <article class="card">
+            <div class="card-image">
+              <img src="https://i.ibb.co/t727T2v/Gemini-Generated-Image-rda4sjrda4sjrda4.png" alt="فحص سريع قبل السفر" />
+            </div>
             <span class="card-badge" data-i18n="services.card2Badge">صيانة سريعة</span>
             <h3 class="card-title" data-i18n="services.card2Title">
               فحص سريع قبل السفر
@@ -1345,13 +1400,23 @@
               <span data-i18n="services.card2FooterText">
                 يناسب الرحلات الطويلة والطرق السريعة
               </span>
-              <a href="#booking">
-                <button data-i18n="services.card2FooterBtn">احجز فحص سفر</button>
-              </a>
+              <!-- ✅ واتساب خاص بفحص السفر -->
+              <button
+                type="button"
+                class="whatsapp-book"
+                data-service="trip-check"
+                data-i18n="services.card2FooterBtn"
+              >
+                احجز فحص سفر
+              </button>
             </div>
           </article>
 
+          <!-- كرت: فلاتر الهواء والمكيف -->
           <article class="card">
+            <div class="card-image">
+              <img src="https://i.ibb.co/672Z1Npj/Gemini-Generated-Image-s6zqgys6zqgys6zq.png" alt="تغيير وتنظيف فلاتر الهواء والمكيف" />
+            </div>
             <span class="card-badge" data-i18n="services.card3Badge">هواء ومكيف</span>
             <h3 class="card-title" data-i18n="services.card3Title">
               تغيير وتنظيف فلاتر الهواء والمكيف
@@ -1372,9 +1437,228 @@
               <span data-i18n="services.card3FooterText">
                 يحسّن عزم السيارة وجودة هواء المقصورة
               </span>
-              <a href="#booking">
-                <button data-i18n="services.card3FooterBtn">احجز خدمة الفلاتر</button>
-              </a>
+              <!-- ✅ واتساب خاص بخدمة الفلاتر -->
+              <button
+                type="button"
+                class="whatsapp-book"
+                data-service="filters-service"
+                data-i18n="services.card3FooterBtn"
+              >
+                احجز خدمة الفلاتر
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- الخدمات الإضافية -->
+    <section id="extra-services">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-block">
+            <div class="section-kicker">الخدمات الإضافية</div>
+            <h2 class="section-title">
+              خدمات عناية إضافية لمحرك وسيارتك
+            </h2>
+            <p class="section-desc">
+              بالإضافة إلى تغيير الزيت والفحص السريع، حركة تقدّم مجموعة خدمات
+              عناية إضافية للمحرك، نظام التوجيه، التكييف، البخاخات، المسّاحات والبطارية.
+              بعض الخدمات متوفرة الآن، وبعضها سيتم إطلاقه قريبًا في الفرع.
+            </p>
+          </div>
+
+          <div class="section-link" id="extra-filter-all">
+            عرض كل الخدمات
+          </div>
+        </div>
+
+        <div style="display:flex; gap:0.6rem; margin-bottom:1.2rem; flex-wrap:wrap;">
+          <button type="button" class="btn btn-outline" id="extra-filter-available">
+            المتاحة الآن
+          </button>
+          <button type="button" class="btn btn-outline" id="extra-filter-soon">
+            المتاحة قريبًا
+          </button>
+        </div>
+
+        <div class="cards-grid" id="extra-services-grid">
+          <!-- خدمة: Engine Care (متوفرة) -->
+          <article class="card" data-status="available">
+            <div class="card-image">
+              <img src="https://i.ibb.co/BXYTxcn/Gemini-Generated-Image-abj2wpabj2wpabj2.png" alt="خدمة العناية بالمحرك Engine Care" />
+            </div>
+            <span class="card-badge">متوفرة الآن</span>
+            <h3 class="card-title">خدمة العناية بالمحرك (Engine Care)</h3>
+            <p class="card-text">
+              خدمة تهتم بنظافة وعمل المحرك بشكل أفضل من خلال منتجات مخصّصة
+              تساعد على تقليل الترسبات داخل المحرك، تحسين الاحتراق، والحفاظ
+              على كفاءة الأداء لمسافة أطول.
+            </p>
+            <div class="card-meta">
+              <span>المدة التقريبية: <strong>40–60 دقيقة</strong></span>
+              <span>مناسبة للسيارات ذات الاستخدام اليومي أو الممشى العالي</span>
+            </div>
+            <div class="card-footer">
+              <span>متوفرة حاليًا في مركز حركة – حي الفيحاء</span>
+              <!-- ✅ واتساب خاص بخدمة Engine Care -->
+              <button
+                type="button"
+                class="whatsapp-book"
+                data-service="engine-care"
+              >
+                احجز خدمة العناية بالمحرك
+              </button>
+            </div>
+          </article>
+
+          <!-- خدمة: Power Steering Fluid (متوفرة) -->
+          <article class="card" data-status="available">
+            <div class="card-image">
+              <img src="https://i.ibb.co/N2DRFzjh/Gemini-Generated-Image-kz1xatkz1xatkz1x.png" alt="تغيير زيت مقود السيارة Power Steering" />
+            </div>
+            <span class="card-badge">متوفرة الآن</span>
+            <h3 class="card-title">تغيير زيت مقود السيارة (Power Steering)</h3>
+            <p class="card-text">
+              تغيير زيت مقود السيارة بزيت مناسب لنظام التوجيه، للمساعدة في
+              سلاسة حركة الدركسون، تقليل الأصوات، وحماية طرمبة ونظام المقود
+              من الإجهاد الزائد مع مرور الوقت.
+            </p>
+            <div class="card-meta">
+              <span>المدة التقريبية: <strong>30–45 دقيقة</strong></span>
+              <span>ينصح بها عند الشعور بثقل أو صوت في المقود</span>
+            </div>
+            <div class="card-footer">
+              <span>متوفرة ويمكن إضافتها مع حجز تغيير الزيت</span>
+              <!-- ✅ واتساب خاص بخدمة زيت المقود -->
+              <button
+                type="button"
+                class="whatsapp-book"
+                data-service="power-steering"
+              >
+                احجز خدمة زيت المقود
+              </button>
+            </div>
+          </article>
+
+          <!-- باقي الخدمات (قريباً) بدون أزرار واتساب -->
+          <!-- خدمة: Car A/C Service (قريباً) -->
+          <article class="card" data-status="soon">
+            <div class="card-image">
+              <img src="https://i.ibb.co/ZR1cZyDp/Gemini-Generated-Image-86xh2v86xh2v86xh.png" alt="خدمة تكييف السيارة Car A/C Service" />
+            </div>
+            <span class="card-badge" style="border-color:#50a098; color:#50a098;">
+              قريبًا في حركة
+            </span>
+            <h3 class="card-title">خدمة تكييف السيارة (Car A/C Service)</h3>
+            <p class="card-text">
+              خدمة مخصصة لنظام تكييف السيارة تشمل فحص مستوى الفريون، التأكد من كفاءة
+              التبريد، وفحص مكوّنات الدورة الأساسية لتحسين برودة الهواء داخل المقصورة
+              وتقليل ضعف التكييف في الأجواء الحارة.
+            </p>
+            <div class="card-meta">
+              <span>المدة المتوقعة: <strong>60–90 دقيقة</strong></span>
+              <span>ستتوفر قريبًا في فرع الفيحاء</span>
+            </div>
+            <div class="card-footer">
+              <span>تابع حسابات حركة لمعرفة موعد إطلاق الخدمة</span>
+              <span>🚧 قريبًا</span>
+            </div>
+          </article>
+
+          <!-- خدمة: Engine Flush (قريباً) -->
+          <article class="card" data-status="soon">
+            <div class="card-image">
+              <img src="https://i.ibb.co/4nqqL5sD/Gemini-Generated-Image-4lt38b4lt38b4lt3.png" alt="خدمة تنظيف دورة زيت المحرك Engine Flush" />
+            </div>
+            <span class="card-badge" style="border-color:#50a098; color:#50a098;">
+              قريبًا في حركة
+            </span>
+            <h3 class="card-title">تنظيف دورة زيت المحرك (Engine Flush)</h3>
+            <p class="card-text">
+              خدمة تساعد في تنظيف دورة زيت المحرك من الرواسب والأوساخ القديمة قبل
+              تعبئة الزيت الجديد، ما يساهم في عمل المحرك بسلاسة وتقليل تراكم
+              الشوائب الداخلية خصوصًا بعد مسافة طويلة أو تغيير نوع الزيت.
+            </p>
+            <div class="card-meta">
+              <span>المدة المتوقعة: <strong>مع خدمة تغيير الزيت</strong></span>
+              <span>توصى بها عند تغيير نوع الزيت أو وجود ترسبات</span>
+            </div>
+            <div class="card-footer">
+              <span>ستضاف كخدمة اختيارية بالمركز قريبًا</span>
+              <span>🚧 قريبًا</span>
+            </div>
+          </article>
+
+          <!-- خدمة: Fuel Injector Service (قريباً) -->
+          <article class="card" data-status="soon">
+            <div class="card-image">
+              <img src="https://i.ibb.co/pr4Fn93w/Gemini-Generated-Image-q4ita5q4ita5q4it.png" alt="خدمة تنظيف بخاخات الوقود Fuel Injector Service" />
+            </div>
+            <span class="card-badge" style="border-color:#50a098; color:#50a098;">
+              قريبًا في حركة
+            </span>
+            <h3 class="card-title">تنظيف بخاخات الوقود (Fuel Injector Service)</h3>
+            <p class="card-text">
+              خدمة موجهة لتنظيف بخاخات الوقود للمساعدة في تحسين الاحتراق داخل
+              المحرك، استجابة دعسة البنزين، تقليل الاستهلاك الزائد للوقود،
+              والتخفيف من الرجّة الخفيفة أثناء الوقوف أو التسارع.
+            </p>
+            <div class="card-meta">
+              <span>المدة المتوقعة: <strong>حوالي 60 دقيقة</strong></span>
+              <span>مناسبة للسيارات ذات الممشى العالي أو الاستخدام الشديد</span>
+            </div>
+            <div class="card-footer">
+              <span>ستكون ضمن خدمات العناية المتقدمة قريبًا</span>
+              <span>🚧 قريبًا</span>
+            </div>
+          </article>
+
+          <!-- خدمة: Windscreen Wipers (قريباً) -->
+          <article class="card" data-status="soon">
+            <div class="card-image">
+              <img src="https://i.ibb.co/v6RpJTJ9/Gemini-Generated-Image-s7efebs7efebs7ef.png" alt="خدمة استبدال مسّاحات الزجاج" />
+            </div>
+            <span class="card-badge" style="border-color:#50a098; color:#50a098;">
+              قريبًا في حركة
+            </span>
+            <h3 class="card-title">استبدال مسّاحات الزجاج الأمامي</h3>
+            <p class="card-text">
+              استبدال مسّاحات الزجاج الأمامي بمسّاحات جديدة مناسبة لمقاس سيارتك،
+              لضمان رؤية أوضح أثناء المطر أو الغبار، وتقليل أصوات الاحتكاك
+              المزعجة على الزجاج مع مرور الوقت.
+            </p>
+            <div class="card-meta">
+              <span>المدة المتوقعة: <strong>15–20 دقيقة</strong></span>
+              <span>يمكن إضافتها مع أي خدمة صيانة سريعة</span>
+            </div>
+            <div class="card-footer">
+              <span>ستتوفر كخدمة سريعة ضمن المركز</span>
+              <span>🚧 قريبًا</span>
+            </div>
+          </article>
+
+          <!-- خدمة: Car Battery Service (قريباً) -->
+          <article class="card" data-status="soon">
+            <div class="card-image">
+              <img src="https://i.ibb.co/Ld6q2Crs/Gemini-Generated-Image-jklgy0jklgy0jklg.png" alt="خدمة بطارية السيارة" />
+            </div>
+            <span class="card-badge" style="border-color:#50a098; color:#50a098;">
+              قريبًا في حركة
+            </span>
+            <h3 class="card-title">خدمة بطارية السيارة</h3>
+            <p class="card-text">
+              فحص شامل لحالة بطارية السيارة، الأقطاب والتوصيلات، وقياس جهد الشحن،
+              مع إمكانية استبدال البطارية ببطارية جديدة مناسبة لمواصفات سيارتك
+              إذا لزم الأمر.
+            </p>
+            <div class="card-meta">
+              <span>المدة المتوقعة: <strong>30–45 دقيقة</strong></span>
+              <span>تشمل فحص الشحن والتوصيلات الأساسية</span>
+            </div>
+            <div class="card-footer">
+              <span>ستتوفر كخدمة متكاملة لفحص واستبدال البطارية</span>
+              <span>🚧 قريبًا</span>
             </div>
           </article>
         </div>
@@ -1446,8 +1730,8 @@
       </div>
     </section>
 
-    <!-- لماذا حركة -->
-    <section id="why-us">
+    <!-- لماذا حركة (موجود بالكود لكن مخفي عبر is-hidden) -->
+    <section id="why-us" class="is-hidden">
       <div class="container">
         <div class="section-header">
           <div class="section-title-block">
@@ -1499,8 +1783,8 @@
       </div>
     </section>
 
-    <!-- نموذج الحجز -->
-    <section class="form-section" id="booking">
+    <!-- نموذج الحجز (موجود بالكود لكنه مخفي عبر is-hidden) -->
+    <section class="form-section is-hidden" id="booking">
       <div class="container">
         <div class="section-header">
           <div class="section-title-block">
@@ -1739,13 +2023,16 @@
           <div class="map-card">
             <div class="map-tag" data-i18n="location.mapTag">موقع حركة على الخريطة</div>
             <div class="map-embed">
-              <!-- استبدل YOUR_EMBED_CODE_HERE بكود Google Maps Embed الخاص بموقعك الحقيقي -->
+              <!-- ✅ Google Maps Embed الرسمي -->
               <iframe
-                src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE_HERE"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4054.435412823727!2d46.81829667536556!3d24.695271978037475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDQxJzQzLjAiTiA0NsKwNDknMTUuMSJF!5e1!3m2!1sen!2ssa!4v1764580161676!5m2!1sen!2ssa"
+                width="100%"
+                height="260"
+                style="border:0;"
+                allowfullscreen=""
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen
-              ></iframe>
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
             </div>
             <div class="map-badge" data-i18n="location.badge">
               افتح الموقع في Google Maps على جوالك للملاحة مباشرة إلى حركة – حي الفيحاء، شارع هارون الرشيد.
@@ -1768,7 +2055,13 @@
           <a href="#services" data-i18n="footer.linkServices">الخدمات</a>
           <a href="#booking" data-i18n="footer.linkBooking">حجز موعد</a>
           <a href="#location" data-i18n="footer.linkLocation">الموقع</a>
-          <a href="https://wa.me/WA_NUMBER_HERE" target="_blank" data-i18n="footer.linkWhatsapp">
+          <a
+            id="whatsapp-footer"
+            href="https://wa.me/966558038843"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="footer.linkWhatsapp"
+          >
             تواصل عبر واتساب
           </a>
         </div>
@@ -1815,7 +2108,7 @@
         "nav.subtitle": "مركز صيانة سيارات وخدمات تغيير الزيت",
         "nav.home": "الرئيسية",
         "nav.services": "الخدمات",
-        "nav.why": "لماذا حركة؟",
+        "nav.why": "ليش حركة؟",
         "nav.booking": "حجز موعد",
         "nav.location": "الموقع",
         "nav.call": "اتصل بنا",
@@ -2192,8 +2485,78 @@
       }
     };
 
+    const WHATSAPP_NUMBER = "966558038843"; // بدون الصفر، مع مفتاح السعودية
+
     let currentLang = "ar";
     let currentTheme = "dark";
+
+    // ✅ نصوص الواتساب لكل خدمة (عربي + إنجليزي)
+    const SERVICE_WHATSAPP_MESSAGES = {
+      "oil-change": {
+        ar: "مرحباً، أود حجز موعد لخدمة تغيير زيت المحرك في مركز حركة.",
+        en: "Hello, I would like to book an engine oil change service at hrkh service center."
+      },
+      "trip-check": {
+        ar: "مرحباً، أود حجز موعد لخدمة فحص سريع قبل السفر في مركز حركة.",
+        en: "Hello, I would like to book a quick pre-trip check service at hrkh service center."
+      },
+      "filters-service": {
+        ar: "مرحباً، أود حجز موعد لخدمة تغيير وتنظيف فلاتر الهواء والمكيف في مركز حركة.",
+        en: "Hello, I would like to book an air and A/C filter service at hrkh service center."
+      },
+      "engine-care": {
+        ar: "مرحباً، أود حجز موعد لخدمة العناية بالمحرك (Engine Care) في مركز حركة.",
+        en: "Hello, I would like to book an Engine Care service at hrkh service center."
+      },
+      "power-steering": {
+        ar: "مرحباً، أود حجز موعد لخدمة تغيير زيت مقود السيارة (Power Steering) في مركز حركة.",
+        en: "Hello, I would like to book a power steering fluid change service at hrkh service center."
+      }
+    };
+
+    function buildServiceMessage(key) {
+      const genericAr = "مرحباً، أود حجز موعد في مركز حركة.";
+      const genericEn = "Hello, I would like to book an appointment at hrkh service center.";
+      const msg = SERVICE_WHATSAPP_MESSAGES[key];
+      if (!msg) {
+        return `${genericAr}\n\n${genericEn}\n\n— From hrkh website`;
+      }
+      return `${msg.ar}\n\n${msg.en}\n\n— From hrkh website`;
+    }
+
+    function getGenericWhatsappUrl() {
+      const genericAr = "مرحباً، أود حجز موعد في مركز حركة.";
+      const genericEn = "Hello, I would like to book an appointment at hrkh service center.";
+      const text =
+        (currentLang === "ar" ? genericAr : genericEn) + "\n\n— From hrkh website";
+      const encoded = encodeURIComponent(text);
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+    }
+
+    function updateWhatsappLinks() {
+      const url = getGenericWhatsappUrl();
+      const ids = ["whatsapp-nav", "whatsapp-footer"];
+      ids.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.href = url;
+      });
+    }
+
+    function setupServiceWhatsappButtons() {
+      const buttons = document.querySelectorAll(".whatsapp-book");
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const key = btn.getAttribute("data-service");
+          const text = buildServiceMessage(key);
+          const url =
+            "https://wa.me/" +
+            WHATSAPP_NUMBER +
+            "?text=" +
+            encodeURIComponent(text);
+          window.open(url, "_blank");
+        });
+      });
+    }
 
     function applyLanguage(lang) {
       currentLang = lang;
@@ -2230,6 +2593,7 @@
       });
 
       updateFooterButtons();
+      updateWhatsappLinks();
     }
 
     function applyTheme(theme) {
@@ -2245,14 +2609,16 @@
 
       if (themeBtn) {
         if (currentLang === "ar") {
-          themeBtn.textContent = currentTheme === "dark" ? "🌙 الوضع الفاتح" : "🌑 الوضع الداكن";
+          themeBtn.textContent =
+            currentTheme === "dark" ? "🌙 الوضع الفاتح" : "🌑 الوضع الداكن";
         } else {
-          themeBtn.textContent = currentTheme === "dark" ? "🌙 Light mode" : "🌑 Dark mode";
+          themeBtn.textContent =
+            currentTheme === "dark" ? "🌙 Light mode" : "🌑 Dark mode";
         }
       }
 
       if (langBtn) {
-        langBtn.textContent = currentLang === "ar" ? "English" : "العربية";
+        langBtn.textContent = currentLang === "ar" ? "العربية" : "English";
       }
     }
 
@@ -2271,12 +2637,15 @@
       });
     }
 
+    // تطبيق الإعدادات الافتراضية
     applyLanguage("ar");
     applyTheme("dark");
+    updateWhatsappLinks();
+    setupServiceWhatsappButtons();
 
     // ====== Google Sheets Web App ======
     const SHEETS_WEB_APP_URL =
-      "https://script.google.com/macros/s/AKfycbzi9kKcYXdNmfnEeFSUWhr3DO8SGRAyGbmcBBQVm-PUxc98Q1IG3Ju6zFModaLCc06B/exec";
+      "https://script.google.com/macros/s/AKfycbzi9kKCYXdNmfnEeFSUWhr3DO8SGRAyGbmcBBQVm-PUxc98Q1IG3Ju6zFModaLCc06B/exec";
 
     const form = document.getElementById("booking-form");
     const successBox = document.getElementById("form-success");
@@ -2327,16 +2696,16 @@
       const dtStart = `${y}${m}${d}`;
 
       const summary =
-        (currentLang === "ar"
+        currentLang === "ar"
           ? `حجز موعد صيانة – حركة (${booking.name || "عميل"})`
-          : `hrkh service booking (${booking.name || "Customer"})`);
+          : `hrkh service booking (${booking.name || "Customer"})`;
 
       const carInfo = [booking.carBrand, booking.carYear]
         .filter(Boolean)
         .join(" – ");
 
       const preferred =
-        (booking.date || booking.time)
+        booking.date || booking.time
           ? `${booking.date || ""} ${booking.time || ""}`.trim()
           : "";
 
@@ -2398,13 +2767,13 @@
         const booking = {
           name: form.name.value.trim(),
           phone: form.phone.value.trim(),
-          carBrand: form.carBrand.value,
-          carModel: "", // تم إلغاء حقل الموديل النصي
-          carYear: form.carYear.value,
-          service: form.service.value,
-          date: form.visitDate.value,
-          time: form.visitTime.value,
-          notes: form.notes.value.trim(),
+          carBrand: form.carBrand ? form.carBrand.value : "",
+          carModel: "",
+          carYear: form.carYear ? form.carYear.value : "",
+          service: form.service ? form.service.value : "",
+          date: form.visitDate ? form.visitDate.value : "",
+          time: form.visitTime ? form.visitTime.value : "",
+          notes: form.notes ? form.notes.value.trim() : "",
           createdAt: new Date().toISOString(),
           userAgent: navigator.userAgent,
         };
@@ -2414,28 +2783,85 @@
         saveBookingToLocalStorage(booking);
         sendBookingToGoogleSheets(booking);
 
-        successBox.style.display = "block";
-        successBox.innerHTML =
-          (currentLang === "ar"
-            ? "✅ تم استلام طلب الحجز بنجاح. سيقوم فريق حركة بالتواصل معك لتأكيد الموعد."
-            : "✅ Your booking request has been received. The hrkh team will contact you to confirm your appointment.") +
-          ' <button type="button" id="add-calendar-btn">' +
-          (currentLang === "ar"
-            ? "إضافة الموعد للتقويم"
-            : "Add to calendar") +
-          "</button>";
+        if (successBox) {
+          successBox.style.display = "block";
+          successBox.innerHTML =
+            (currentLang === "ar"
+              ? "✅ تم استلام طلب الحجز بنجاح. سيقوم فريق حركة بالتواصل معك لتأكيد الموعد."
+              : "✅ Your booking request has been received. The hrkh team will contact you to confirm your appointment.") +
+            ' <button type="button" id="add-calendar-btn">' +
+            (currentLang === "ar"
+              ? "إضافة الموعد للتقويم"
+              : "Add to calendar") +
+            "</button>";
 
-        const calendarBtn = document.getElementById("add-calendar-btn");
-        if (calendarBtn) {
-          calendarBtn.addEventListener("click", () => {
-            if (lastBooking) addBookingToCalendar(lastBooking);
-          });
+          const calendarBtn = document.getElementById("add-calendar-btn");
+          if (calendarBtn) {
+            calendarBtn.addEventListener("click", () => {
+              if (lastBooking) addBookingToCalendar(lastBooking);
+            });
+          }
         }
 
         form.reset();
         applyLanguage(currentLang);
       });
     }
+
+    // ====== فلترة الخدمات الإضافية (متوفرة / قريباً) ======
+    (function setupExtraServicesFilters() {
+      const grid = document.getElementById("extra-services-grid");
+      if (!grid) return;
+
+      const allBtn = document.getElementById("extra-filter-all");
+      const availableBtn = document.getElementById("extra-filter-available");
+      const soonBtn = document.getElementById("extra-filter-soon");
+
+      const cards = Array.from(grid.querySelectorAll(".card"));
+
+      function setActive(btn) {
+        [availableBtn, soonBtn].forEach((b) => {
+          if (!b) return;
+          b.classList.remove("btn-primary");
+          b.classList.add("btn-outline");
+        });
+        if (btn && btn.classList) {
+          btn.classList.remove("btn-outline");
+          btn.classList.add("btn-primary");
+        }
+      }
+
+      function showAll() {
+        cards.forEach((c) => (c.style.display = ""));
+        setActive(null);
+      }
+
+      function showStatus(status) {
+        cards.forEach((c) => {
+          if (c.getAttribute("data-status") === status) {
+            c.style.display = "";
+          } else {
+            c.style.display = "none";
+          }
+        });
+      }
+
+      if (allBtn) {
+        allBtn.addEventListener("click", showAll);
+      }
+      if (availableBtn) {
+        availableBtn.addEventListener("click", () => {
+          showStatus("available");
+          setActive(availableBtn);
+        });
+      }
+      if (soonBtn) {
+        soonBtn.addEventListener("click", () => {
+          showStatus("soon");
+          setActive(soonBtn);
+        });
+      }
+    })();
   </script>
 </body>
 </html>
